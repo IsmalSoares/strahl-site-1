@@ -38,7 +38,6 @@
     top: 0;
     z-index: 100;
     box-shadow: 0 1px 6px rgba(0,0,0,.10);
-    height: 68px;
   }
   .nav-inner {
     max-width: 1280px;
@@ -46,20 +45,31 @@
     padding: 0 32px;
     display: flex;
     align-items: center;
-    height: 100%;
-    gap: 40px;
+    flex-wrap: wrap;
+    gap: 0;
   }
   .brand {
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 12px 0;
+    flex-shrink: 0;
   }
   .brand-logo {
     height: 32px;
     width: auto;
     display: block;
   }
-  nav { display: flex; align-items: center; gap: 4px; flex: 1; }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex: none;
+    width: 100%;
+    border-top: 1px solid rgba(26,39,68,.08);
+    padding: 4px 0;
+    flex-wrap: wrap;
+  }
   .nav-link {
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
@@ -109,7 +119,9 @@
   .dropdown-panel a.active-sub { color: var(--red); background: #fdf2f0; }
   .nav-arrow { font-size: 18px; vertical-align: middle; transition: transform .2s; }
   .nav-dropdown:hover .nav-arrow, .nav-dropdown.open .nav-arrow { transform: rotate(180deg); }
-  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+  .nav-right { margin-left: auto; display: flex; align-items: center; gap: 16px; order: 2; flex-shrink: 0; }
+  .brand { order: 1; }
+  nav { order: 3; }
   .nav-phone {
     font-weight: 700;
     font-size: 14px;
@@ -584,6 +596,7 @@
     text-shadow: 0 2px 16px rgba(0,0,0,.5);
   }
   .linha-hero h1 span { color: var(--red); }
+  #page-mining-aluminio .linha-hero h1 { font-size: 48px; }
   .linha-hero .desc {
     font-size: 16px;
     color: rgba(255,255,255,.85);
@@ -768,7 +781,7 @@
     background: var(--gray-mid);
     border-bottom: 1px solid var(--gray-border);
     position: sticky;
-    top: 68px;
+    top: 92px;
     z-index: 50;
   }
   .ds-nav-bar-inner {
@@ -957,7 +970,7 @@
     padding: 32px 0;
     position: fixed;
     left: 0;
-    top: 68px;
+    top: 92px;
   }
   /* Not using fixed sidebar for this prototype — keeping layout clean */
 
@@ -1024,7 +1037,7 @@
   .mobile-nav {
     position: fixed;
     inset: 0;
-    top: 68px;
+    top: 92px;
     background: var(--white);
     z-index: 99;
     flex-direction: column;
@@ -1843,11 +1856,8 @@
   .cat-thumb:hover { border-color: var(--red); }
   .cat-thumb-zoom {
     display: none;
-    position: absolute;
-    left: calc(100% + 12px);
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 200;
+    position: fixed;   /* fixed escapa de qualquer overflow/scroll container */
+    z-index: 9999;
     background: var(--white);
     border: 1px solid var(--gray-border);
     border-radius: 6px;
@@ -1881,7 +1891,6 @@
     height: 100%;
     object-fit: contain;
   }
-  .cat-thumb-wrap:hover .cat-thumb-zoom { display: block; }
   /* Célula de código com thumb integrada */
   .cat-code-cell {
     display: flex;

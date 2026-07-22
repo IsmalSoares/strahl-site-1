@@ -64,11 +64,14 @@
       'datasheet': 'nav-plugues',
       'datasheet-4079': 'nav-plugues',
       'datasheet-5276': 'nav-plugues',
+      'storm-block': 'nav-plugues',
       'mining-termoplastica': 'nav-plugues',
       'mining-ultrarresistente': 'nav-plugues',
+      'mining-aluminio': 'nav-plugues',
       'mining-altacorrente': 'nav-plugues',
       'schuko': 'nav-plugues',
-      'unidades-combinadas': 'nav-uc'
+      'unidades-combinadas': 'nav-uc',
+      'qd': 'nav-qd'
     };
     var navId = navMap[page];
     if (navId) {
@@ -112,7 +115,7 @@
     if (targetId) {
       var target = document.getElementById(targetId);
       if (target) {
-        var headerH = 68;  // header sticky
+        var headerH = 92;  // header sticky
         var navH = navBar ? navBar.offsetHeight : 0;
         var offset = target.getBoundingClientRect().top + window.pageYOffset - headerH - navH - 16;
         window.scrollTo({ top: offset, behavior: 'smooth' });
@@ -130,6 +133,71 @@
     if (show) { show.classList.add('sd-active'); show.style.display = ''; }
     if (hide) { hide.classList.remove('sd-active'); hide.style.display = 'none'; }
   }
+
+  // ─── Storm Block: tab de tipo de produto ───
+  function sbTab(btn, type) {
+    document.querySelectorAll('#page-storm-block .sb-panel').forEach(function(p) { p.style.display = 'none'; });
+    var panel = document.getElementById('sb-' + type);
+    if (panel) panel.style.display = '';
+    document.querySelectorAll('#page-storm-block .mining-series-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+  }
+
+// ─── Cat thumb zoom — overlay filho direto do body, sempre acima de tudo ───
+(function() {
+  var GAP = 12, MARGIN = 8, SIZE = 220;
+  var overlay = null;
+
+  function getOverlay() {
+    if (overlay) return overlay;
+    overlay = document.createElement('div');
+    overlay.id = 'cat-zoom-overlay';
+    overlay.style.cssText = [
+      'display:none',
+      'position:fixed',
+      'z-index:99999',
+      'width:' + SIZE + 'px',
+      'height:' + SIZE + 'px',
+      'background:#fff',
+      'border:1px solid #dde2ea',
+      'border-radius:6px',
+      'padding:8px',
+      'box-shadow:0 8px 32px rgba(0,0,0,.20)',
+      'pointer-events:none',
+      'box-sizing:border-box'
+    ].join(';');
+    var img = document.createElement('img');
+    img.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block';
+    overlay.appendChild(img);
+    document.body.appendChild(overlay);
+    return overlay;
+  }
+
+  document.addEventListener('mouseover', function(e) {
+    var wrap = e.target.closest('.cat-thumb-wrap');
+    if (!wrap) return;
+    var thumb = wrap.querySelector('.cat-thumb');
+    if (!thumb) return;
+    var ov = getOverlay();
+    ov.querySelector('img').src = thumb.src;
+    var r = wrap.getBoundingClientRect();
+    var top  = r.top + r.height / 2 - SIZE / 2;
+    var left = r.right + GAP;
+    if (left + SIZE > window.innerWidth  - MARGIN) left = r.left - SIZE - GAP;
+    if (top  < MARGIN) top = MARGIN;
+    if (top  + SIZE > window.innerHeight - MARGIN) top = window.innerHeight - SIZE - MARGIN;
+    ov.style.left    = left + 'px';
+    ov.style.top     = top  + 'px';
+    ov.style.display = 'block';
+  });
+
+  document.addEventListener('mouseout', function(e) {
+    var wrap = e.target.closest('.cat-thumb-wrap');
+    if (!wrap) return;
+    if (wrap.contains(e.relatedTarget)) return;
+    if (overlay) overlay.style.display = 'none';
+  });
+})();
 
 // Datasheet: troca imagem principal com ID customizado
 function dsSetImgCustom(imgId, thumb, src) {
