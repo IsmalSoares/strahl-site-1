@@ -2349,3 +2349,62 @@
   /* Menu de produtos e barra "Encontre por" centralizados */
   nav { justify-content: center; }
   .seg-inner { justify-content: safe center; }
+
+  /* ═══ Celular: nada passa da largura da tela; só as tabelas de produto rolam de lado ═══ */
+  .ip-list { display: none; }
+  @media (max-width: 640px) {
+    /* Seleção de produtos: só a tabela rola, o título fica fixo na tela */
+    .ip-block { overflow-x: visible; }
+    .ip-header h3, .ip-header p { white-space: normal; }
+
+    /* Graus IP e IK: grade de 7 a 9 colunas vira lista vertical (montada em main.js) */
+    .ip-grid { display: none !important; }
+    .ip-list { display: grid; gap: 8px; padding: 12px; margin: 0; list-style: none; }
+    .ip-list li { display: grid; grid-template-columns: 54px 64px 1fr; align-items: center; gap: 10px; border: 1px solid var(--gray-border); border-radius: 6px; padding: 8px 10px; background: var(--white); }
+    .ip-list li.ip-on { border-color: var(--red); background: #fff5f4; }
+    .ip-list .ip-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 20px; color: var(--text-muted); text-align: center; }
+    .ip-list li.ip-on .ip-num, .ip-list li.ip-on .ip-txt { color: var(--red); font-weight: 700; }
+    .ip-list .ip-ico svg { width: 56px; height: auto; display: block; }
+    .ip-list .ip-txt { font-size: 13px; color: var(--text); line-height: 1.4; }
+    [style*="padding:14px 28px;display:flex;align-items:baseline"] { flex-direction: column; gap: 2px !important; padding: 12px 16px !important; }
+
+    /* Tabelas de comparação (Qual escolher?) viram cartões, sem rolagem */
+    table.lr-compare { min-width: 0 !important; width: 100%; }
+    table.lr-compare thead { display: none; }
+    table.lr-compare, table.lr-compare tbody, table.lr-compare tr, table.lr-compare td { display: block; width: 100%; box-sizing: border-box; }
+    table.lr-compare tr { border: 1px solid var(--gray-border); border-radius: 8px; margin-bottom: 12px; background: var(--white); overflow: hidden; }
+    table.lr-compare tr.lr-current { border-color: var(--red); }
+    table.lr-compare td { border: 0 !important; padding: 6px 14px !important; text-align: left !important; width: 100% !important; min-width: 0 !important; max-width: none !important; position: static !important; box-shadow: none !important; background: transparent; }
+    table.lr-compare td:first-child { background: var(--navy) !important; color: var(--white) !important; padding: 10px 14px !important; }
+    table.lr-compare td:first-child strong { color: var(--white); }
+    table.lr-compare td[data-label]:not(:first-child)::before { content: attr(data-label); display: block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+    table.lr-compare td:last-child { padding-bottom: 12px !important; }
+
+    /* Abas das séries (Mining e Storm) e dos datasheets quebram linha em vez de rolar */
+    .mining-series-inner { flex-wrap: wrap; overflow-x: visible; white-space: normal; padding: 8px 16px; row-gap: 6px; }
+    .ds-nav-tabs { flex-wrap: wrap; overflow-x: visible; white-space: normal; }
+    .ds-nav-tabs .ds-nav-btn { flex-shrink: 1; }
+
+    /* Datasheet: coluna única que respeita a largura da tela */
+    .ds-grid { grid-template-columns: minmax(0, 1fr) !important; }
+    .ds-grid > * { min-width: 0; }
+
+    /* Storm Block: bloco de abertura de cada aba (fotos + texto) empilha */
+    [style*="display:flex;align-items:center;gap:24px;background:var(--gray-bg)"] { flex-direction: column; align-items: stretch !important; }
+    [style*="display:flex;align-items:center;gap:24px;background:var(--gray-bg)"] > * { min-width: 0; max-width: 100%; }
+
+    /* Quadros de Distribuição: os três passos do serviço de montagem empilham */
+    [style*="grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px"] { grid-template-columns: 1fr !important; }
+
+    /* Textos de abertura que não quebravam linha */
+    .linha-hero .serie-tag, .serie-tag { white-space: normal; }
+    .linha-hero > .container, .linha-hero-inner { min-width: 0; max-width: 100%; box-sizing: border-box; }
+    .linha-hero h1, .linha-hero .serie-tag { overflow-wrap: anywhere; }
+
+    /* Datasheets: tabela de dimensões cabe na largura */
+    .ds-body table { width: 100%; }
+    .ds-body table th, .ds-body table td { padding: 6px 4px !important; font-size: 11px !important; }
+    .dims-cards > * { min-width: 0; }
+    .dims-card table { width: 100%; }
+    .dims-card table th, .dims-card table td { padding: 6px 3px !important; font-size: 11px !important; }
+  }

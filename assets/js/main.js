@@ -295,10 +295,54 @@ function dsSetImgCustom(imgId, thumb, src) {
   }
 
 
-  // ─── Abrir página pelo endereço (#nome-da-pagina), ex.: index.html#home-nova ───
+  // ─── Abrir página pelo endereço (#nome-da-pagina), ex.: index.html#contato ───
   function abrirPorHash() {
     var id = decodeURIComponent((location.hash || '').replace('#', ''));
     if (id && document.getElementById('page-' + id)) goTo(id);
   }
   window.addEventListener('hashchange', abrirPorHash);
   document.addEventListener('DOMContentLoaded', abrirPorHash);
+
+
+  // ─── Ajustes para celular ───
+  // 1) Graus IP/IK: copia cada coluna da grade (número, ícone e descrição) para uma lista vertical,
+  //    mostrada só em telas pequenas (CSS .ip-list). A grade original continua no computador.
+  // 2) Tabelas "Qual escolher?": cada célula recebe o nome da coluna, usado nos cartões do celular.
+  // 3) Tabelas de seleção: só a tabela rola de lado, não o bloco com o título.
+  function ajustesCelular() {
+    document.querySelectorAll('.page div').forEach(function(card) {
+      var grades = Array.prototype.filter.call(card.children, function(c) {
+        return /grid-template-columns:\s*repeat\(/.test(c.getAttribute('style') || '');
+      });
+      var cab = card.firstElementChild;
+      if (grades.length < 3 || !cab || !/Algarismo/.test(cab.textContent)) return;
+      var nums = grades[0].children, icos = grades[1].children, txts = grades[2].children;
+      var ul = document.createElement('ul');
+      ul.className = 'ip-list';
+      for (var i = 0; i < nums.length; i++) {
+        var on = /var\(--red\)/.test(nums[i].getAttribute('style') || '');
+        var li = document.createElement('li');
+        if (on) li.className = 'ip-on';
+        li.innerHTML = '<div class="ip-num">' + nums[i].textContent.trim() + '</div>' +
+          '<div class="ip-ico">' + (icos[i] ? icos[i].innerHTML : '') + '</div>' +
+          '<div class="ip-txt">' + (txts[i] ? txts[i].textContent.trim() : '') + '</div>';
+        ul.appendChild(li);
+      }
+      grades.forEach(function(g) { g.classList.add('ip-grid'); });
+      grades[grades.length - 1].insertAdjacentElement('afterend', ul);
+    });
+    document.querySelectorAll('table.lr-compare').forEach(function(t) {
+      var heads = Array.prototype.map.call(t.querySelectorAll('thead th'), function(th) { return th.textContent.trim(); });
+      t.querySelectorAll('tbody tr').forEach(function(tr) {
+        Array.prototype.forEach.call(tr.children, function(td, i) { if (heads[i]) td.setAttribute('data-label', heads[i]); });
+      });
+    });
+    document.querySelectorAll('.ip-block table.sel-table').forEach(function(t) {
+      if (t.parentElement.classList.contains('table-scroll')) return;
+      var w = document.createElement('div');
+      w.className = 'table-scroll';
+      t.parentNode.insertBefore(w, t);
+      w.appendChild(t);
+    });
+  }
+  document.addEventListener('DOMContentLoaded', ajustesCelular);

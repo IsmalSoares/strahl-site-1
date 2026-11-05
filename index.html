@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20261104e">
+<link rel="stylesheet" href="assets/css/main.css?v=20261105e">
 <!-- Schema.org: dados estruturados para buscas e AI Overviews -->
 <script type="application/ld+json">
 {
@@ -238,8 +238,8 @@
 
 <main id="main-content">
 
-<!-- ══════════════ PAGE: HOME ══════════════ -->
-<div class="page active" id="page-home">
+<!-- ══════════════ HOME ANTERIOR (guardada para consulta: index.html#home-antiga) ══════════════ -->
+<div class="page" id="page-home-antiga">
 
   <!-- HERO -->
   <section class="hero">
@@ -663,14 +663,11 @@
     <div class="footer-bottom">© 2026 Materiais Elétricos STRAHL. Todos os direitos reservados.</div>
   </footer>
 
-</div><!-- /page-home -->
+</div><!-- /page-home-antiga -->
 
 
-<!-- ══════════════ PREVIEW: NOVA HOME ══════════════
-     Página de avaliação da nova Home. A Home atual (page-home) não foi alterada.
-     Abrir no navegador: index.html#home-nova
--->
-<div class="page" id="page-home-nova">
+<!-- ══════════════ PAGE: HOME (nova Home aprovada) ══════════════ -->
+<div class="page active" id="page-home">
 
   <!-- ── 1. HERO: dois caminhos ── -->
   <section class="hn-hero">
@@ -699,7 +696,7 @@
         </div>
       </div>
       <div class="hn-hero-actions">
-        <button class="btn-primary" onclick="abrirKitTecnico('Nova Home — contato geral')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
+        <button class="btn-primary" onclick="abrirKitTecnico('Home: contato geral')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
         <button class="btn-secondary" onclick="window.open('https://loja.strahl.com/','_blank')">COMPRAR ONLINE</button>
       </div>
     </div>
@@ -740,7 +737,7 @@
         </div>
         <div>
           <div class="hn-video">
-            <iframe src="https://www.youtube-nocookie.com/embed/XZ2CC85MOyM" title="Mining Block Ultrarresistente — STRAHL Conecta" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/XZ2CC85MOyM" title="Mining Block Ultrarresistente · STRAHL Conecta" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="hn-video-cap">Vídeo do canal @StrahlConecta no YouTube</div>
         </div>
@@ -762,7 +759,7 @@
           <div class="hn-app-body">
             <h3>Mineração e siderurgia</h3>
             <p>Impacto, poeira e alta corrente. Bloqueio mecânico e carcaças ultrarresistentes ou em alumínio.</p>
-            <div class="hn-app-links"><a onclick="goTo('mining-ultrarresistente')">Ultrarresistente</a><a onclick="goTo('mining-aluminio')">Alumínio 125–300A</a><a onclick="goTo('mining-altacorrente')">400A e 630A</a></div>
+            <div class="hn-app-links"><a onclick="goTo('mining-ultrarresistente')">Ultrarresistente</a><a onclick="goTo('mining-aluminio')">Alumínio 125A a 300A</a><a onclick="goTo('mining-altacorrente')">400A e 630A</a></div>
           </div>
         </div>
         <div class="hn-app">
@@ -842,7 +839,7 @@
           </ul>
           <div class="hn-hero-actions" style="margin-top:0">
             <button class="btn-primary" onclick="window.open('https://api.whatsapp.com/send/?phone=551150393999&text=Ol%C3%A1%2C%20sou%20fabricante%20de%20m%C3%A1quinas%2Fequipamentos%20e%20quero%20usar%20tomadas%20STRAHL%20no%20meu%20produto.&type=phone_number&app_absent=0','_blank')">QUERO A STRAHL NO MEU EQUIPAMENTO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
-            <button class="btn-secondary" onclick="abrirKitTecnico('Fornecimento OEM — tomadas e plugues')">SOLICITAR KIT TÉCNICO</button>
+            <button class="btn-secondary" onclick="abrirKitTecnico('Fornecimento OEM: tomadas e plugues')">SOLICITAR KIT TÉCNICO</button>
           </div>
         </div>
       </div>
@@ -944,7 +941,7 @@
         <div class="hn-proj-card">
           <h3>Qual caixa a minha concessionária aceita?</h3>
           <p>Caixas e centros de medição homologados por 37 concessionárias de energia, da Enel à Equatorial. Veja a lista por região.</p>
-          <button class="hn-more" onclick="document.querySelector('#page-home-nova .util-scroll-wrap').scrollIntoView({behavior:'smooth',block:'center'})">Ver concessionárias →</button>
+          <button class="hn-more" onclick="document.querySelector('#page-home .util-scroll-wrap').scrollIntoView({behavior:'smooth',block:'center'})">Ver concessionárias →</button>
         </div>
         <div class="hn-proj-card">
           <h3>Caixa individual, CMA, MEC-P ou QGBT?</h3>
@@ -954,7 +951,7 @@
         <div class="hn-proj-card">
           <h3>A STRAHL monta seu projeto</h3>
           <p>Envie o projeto e receba o CMA ou o quadro montado, com equipamentos e ligações internas prontas para instalação.</p>
-          <button class="hn-more" onclick="abrirKitTecnico('Projeto de entrada de energia — montagem STRAHL')">Enviar meu projeto →</button>
+          <button class="hn-more" onclick="abrirKitTecnico('Projeto de entrada de energia: montagem STRAHL')">Enviar meu projeto →</button>
         </div>
       </div>
       <div class="hn-proj-group">Individualização de medição de água</div>
@@ -993,11 +990,11 @@
           <div class="hn-vbody"><span class="hn-vtag">Vídeo</span><h3>Mining Block Ultrarresistente</h3><p>Polímeros de alta performance, bloqueio mecânico e as duas janelas de proteção em corpo único.</p></div>
         </div>
         <div class="hn-vcard">
-          <div class="hn-video"><iframe src="https://www.youtube-nocookie.com/embed/nTcd8mwDWxU" title="Podcast Linha Cekton — STRAHL Conecta" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="hn-video"><iframe src="https://www.youtube-nocookie.com/embed/nTcd8mwDWxU" title="Podcast Linha Cekton · STRAHL Conecta" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           <div class="hn-vbody"><span class="hn-vtag">Podcast</span><h3>Linha Cekton</h3><p>Como os contatos com anéis de compressão evitam o superaquecimento nas conexões industriais.</p></div>
         </div>
         <div class="hn-vcard">
-          <div class="hn-video"><iframe src="https://www.youtube-nocookie.com/embed/CR4F2qmypTc" title="Podcast Linha Mining Block — STRAHL Conecta" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+          <div class="hn-video"><iframe src="https://www.youtube-nocookie.com/embed/CR4F2qmypTc" title="Podcast Linha Mining Block · STRAHL Conecta" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           <div class="hn-vbody"><span class="hn-vtag">Podcast</span><h3>Linha Mining Block</h3><p>Bloqueio mecânico, proteção elétrica e as versões para mineração, siderurgia e alta corrente.</p></div>
         </div>
       </div>
@@ -1231,7 +1228,7 @@
     <div class="footer-bottom">© 2026 Materiais Elétricos STRAHL. Todos os direitos reservados.</div>
   </footer>
 
-</div><!-- /page-home-nova -->
+</div><!-- /page-home -->
 
 <!-- ══════════════ PAGE: LINHA CEKTON ══════════════ -->
 <div class="page" id="page-cekton">
@@ -7788,7 +7785,7 @@
 </div><!-- /page-mining-altacorrente -->
 
 
-<script src="assets/js/main.js?v=20261104d" defer></script>
+<script src="assets/js/main.js?v=20261105" defer></script>
 
 <!-- ══════════════ PAGE: DATASHEET 4079/CK ══════════════ -->
 <div class="page" id="page-datasheet-4079">
