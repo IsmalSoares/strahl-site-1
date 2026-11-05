@@ -42,6 +42,17 @@ strahl-site/
 | page-datasheet-4079 | Datasheet 4079/CK |
 | page-datasheet-5276 | Datasheet 5276/CK |
 
+## Publicação (uma URL por página)
+- **Fonte:** `index-fonte.html` tem todas as páginas juntas. É nele que se edita o conteúdo.
+- **Gerar o site:** `python3 tools/build_urls.py <modo>` cria `index.html` (Home) e um arquivo por página
+  (`linhas/…`, `segmentos/…`, `produtos/…`, `strahl.html`, `contato.html`…), mais `sitemap.xml` e `robots.txt`.
+  - `local`: testar no computador (`python3 -m http.server`), links terminam em `.html`
+  - `teste`: GitHub Pages de teste (ismalsoares.github.io/strahl-site-1), com noindex
+  - `producao`: www.strahl.com, sem noindex
+- As URLs mantêm as já indexadas do strahl.com (`/linhas/...`). A tabela `ROTAS` fica em `tools/build_urls.py`
+  e em `assets/js/main.js` (as duas precisam ser iguais).
+- Não editar os HTML gerados: rodar o build de novo depois de mudar `index-fonte.html`.
+
 ## Navegação
 Feita por JS puro via `goTo('nome-da-pagina')`.
 Novas páginas devem:

@@ -50,16 +50,66 @@
     if (main) main.src = src;
   }
 
+  // ─── Endereço de cada página no site publicado (uma URL por página) ───
+  // Mantém as URLs já indexadas do strahl.com. Ver build_urls.py.
+  var ROTAS = {
+    'home': '',
+    'cekton': 'linhas/tomadas-e-plugues-industriais',
+    'storm-block': 'linhas/storm-block',
+    'schuko': 'linhas/schuko',
+    'mining-termoplastica': 'linhas/tomadas-e-plugues-mining-block',
+    'mining-ultrarresistente': 'linhas/tomadas-e-plugues-mining-block/ultrarresistente',
+    'mining-aluminio': 'linhas/tomadas-e-plugues-mining-block/carcaca-de-aluminio',
+    'mining-altacorrente': 'linhas/tomadas-e-plugues-mining-block/alta-corrente',
+    'unidades-combinadas': 'linhas/unidades-combinadas',
+    'qd': 'linhas/quadros-de-distribuicao',
+    'cmas': 'linhas/centros-de-medicao-agrupada',
+    'caixas-modulares': 'linhas/caixas-modulares',
+    'qgbt-qdc': 'linhas/qgbt-e-qdc',
+    'caixas-metalicas': 'linhas/caixas-metalicas-e-barramentos-blindados',
+    'caixas-individuais': 'linhas/caixas-de-medicao-individuais',
+    'caixas-passagem': 'linhas/caixas-de-passagem-e-distribuicao',
+    'acessorios': 'linhas/acessorios',
+    'hidrometro': 'linhas/caixas-para-hidrometro',
+    'individualizacao-agua': 'linhas/individualizacao-de-medicao-de-agua',
+    'predial-residencial': 'linhas/predial-e-residencial',
+    'segmento-industrial': 'segmentos/linha-industrial',
+    'construcao-civil': 'segmentos/construcao-civil',
+    'distribuidores': 'segmentos/distribuidores',
+    'revendedores': 'segmentos/revendedores',
+    'sobre': 'strahl',
+    'contato': 'contato',
+    'representantes': 'representantes',
+    'cursos': 'cursos-e-treinamentos',
+    'datasheet': 'produtos/3076-ck',
+    'datasheet-4079': 'produtos/4079-ck',
+    'datasheet-5276': 'produtos/5276-ck',
+    'datasheet-bem4406': 'produtos/bem-4406',
+    'datasheet-bm4206': 'produtos/bm-4206'
+  };
+
   // ─── Core page switcher ───
+  // No arquivo completo (index-fonte.html) todas as páginas estão juntas e a troca é feita aqui.
+  // No site publicado cada página é um arquivo; se a página pedida não está neste arquivo, abre a URL dela.
   function goTo(page) {
+    if (!document.getElementById('page-' + page) && ROTAS.hasOwnProperty(page)) {
+      var base = document.querySelector('base');
+      var ext = document.documentElement.getAttribute('data-ext') || '';
+      var rota = ROTAS[page];
+      location.href = (base ? base.getAttribute('href') : '/') + (rota ? rota + ext : '');
+      return;
+    }
     closeMobileNav();
     document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
     var target = document.getElementById('page-' + page);
     if (target) target.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     document.querySelectorAll('.nav-dropdown').forEach(function(d) { d.classList.remove('open'); });
+    marcarMenu(page);
+  }
 
-    // Atualiza sublinhado ativo no nav
+  // Sublinha no menu a seção da página aberta (também ao carregar cada página publicada)
+  function marcarMenu(page) {
     document.querySelectorAll('.nav-link').forEach(function(l) { l.classList.remove('active'); });
     var navMap = {
       'home': null,
@@ -85,7 +135,9 @@
       'hidrometro': 'nav-agua',
       'individualizacao-agua': 'nav-agua',
       'sobre': 'nav-sobre',
-      'contato': 'nav-contato'
+      'contato': 'nav-contato',
+      'representantes': 'nav-contato',
+      'cursos': 'nav-sobre'
     };
     document.querySelectorAll('.seg-item').forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-page') === page); });
     var navId = navMap[page];
@@ -298,10 +350,14 @@ function dsSetImgCustom(imgId, thumb, src) {
   // ─── Abrir página pelo endereço (#nome-da-pagina), ex.: index.html#contato ───
   function abrirPorHash() {
     var id = decodeURIComponent((location.hash || '').replace('#', ''));
-    if (id && document.getElementById('page-' + id)) goTo(id);
+    if (id && (document.getElementById('page-' + id) || ROTAS.hasOwnProperty(id))) goTo(id);
   }
   window.addEventListener('hashchange', abrirPorHash);
   document.addEventListener('DOMContentLoaded', abrirPorHash);
+  document.addEventListener('DOMContentLoaded', function() {
+    var ativa = document.querySelector('.page.active');
+    if (ativa) marcarMenu(ativa.id.replace('page-', ''));
+  });
 
 
   // ─── Ajustes para celular ───
