@@ -11,6 +11,9 @@
     var btn = document.getElementById('nav-toggle');
     if (!nav) return;
     var isOpen = nav.style.display === 'flex';
+    // Encosta o painel logo abaixo do topo, qualquer que seja a altura do header
+    var header = document.querySelector('header');
+    if (header) nav.style.top = header.getBoundingClientRect().bottom + 'px';
     nav.style.display = isOpen ? 'none' : 'flex';
     document.body.classList.toggle('nav-open', !isOpen);
     if (btn) btn.setAttribute('aria-expanded', String(!isOpen));
@@ -71,8 +74,20 @@
       'mining-altacorrente': 'nav-plugues',
       'schuko': 'nav-plugues',
       'unidades-combinadas': 'nav-uc',
-      'qd': 'nav-qd'
+      'qd': 'nav-qd',
+      'cmas': 'nav-cma',
+      'caixas-modulares': 'nav-cma',
+      'qgbt-qdc': 'nav-cma',
+      'caixas-metalicas': 'nav-cma',
+      'caixas-individuais': 'nav-cma',
+      'caixas-passagem': 'nav-cma',
+      'acessorios': 'nav-cma',
+      'hidrometro': 'nav-agua',
+      'individualizacao-agua': 'nav-agua',
+      'sobre': 'nav-sobre',
+      'contato': 'nav-contato'
     };
+    document.querySelectorAll('.seg-item').forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-page') === page); });
     var navId = navMap[page];
     if (navId) {
       var navEl = document.getElementById(navId);
@@ -207,3 +222,83 @@ function dsSetImgCustom(imgId, thumb, src) {
   if (panel) panel.querySelectorAll('.ds-thumb').forEach(function(t){ t.classList.remove('active'); });
   thumb.classList.add('active');
 }
+
+
+  // ─── Kit Técnico: formulário que envia o pedido para o WhatsApp de vendas ───
+  // Datasheets, desenhos e DWG são enviados pela equipe após o contato.
+  var KIT_WHATSAPP = '551150393999';
+
+  function abrirKitTecnico(produto) {
+    var ov = document.getElementById('kit-overlay');
+    if (!ov) return;
+    var campo = document.getElementById('kit-produto');
+    if (campo) campo.value = produto || '';
+    ov.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    var nome = document.getElementById('kit-nome');
+    if (nome) setTimeout(function() { nome.focus(); }, 50);
+  }
+
+  function fecharKitTecnico() {
+    var ov = document.getElementById('kit-overlay');
+    if (ov) ov.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function enviarKitTecnico(e) {
+    e.preventDefault();
+    var f = e.target;
+    var v = function(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    var linhas = [
+      'Olá, STRAHL! Gostaria de solicitar o *Kit Técnico* (datasheet, desenhos e DWG).',
+      '',
+      '*Produto/linha:* ' + (v('kit-produto') || '-'),
+      '*Nome:* ' + v('kit-nome'),
+      '*Empresa:* ' + v('kit-empresa'),
+      '*E-mail:* ' + v('kit-email'),
+      '*WhatsApp:* ' + v('kit-telefone'),
+      '*Perfil:* ' + v('kit-perfil'),
+      '*Projeto/concessionária/região:* ' + (v('kit-projeto') || '-')
+    ];
+    if (v('kit-mensagem')) linhas.push('*Mensagem:* ' + v('kit-mensagem'));
+    linhas.push('', 'Autorizo o contato da STRAHL conforme a LGPD.');
+    var url = 'https://api.whatsapp.com/send/?phone=' + KIT_WHATSAPP + '&text=' + encodeURIComponent(linhas.join('\n')) + '&type=phone_number&app_absent=0';
+    window.open(url, '_blank');
+    fecharKitTecnico();
+    f.reset();
+  }
+
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') fecharKitTecnico(); });
+
+  // ─── Formulário da página Contato: abre o WhatsApp de vendas com a mensagem preenchida ───
+  function enviarContato(e) {
+    e.preventDefault();
+    var f = e.target;
+    var v = function(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; };
+    var linhas = [
+      'Olá, STRAHL! Vim pelo site e gostaria de falar com vendas.',
+      '',
+      '*Assunto:* ' + v('ct-assunto'),
+      '*Linha de interesse:* ' + (v('ct-linha') || '-'),
+      '*Nome:* ' + v('ct-nome'),
+      '*Empresa:* ' + (v('ct-empresa') || '-'),
+      '*E-mail:* ' + v('ct-email'),
+      '*WhatsApp:* ' + v('ct-telefone'),
+      '*Cidade/UF:* ' + v('ct-cidade'),
+      '*Mensagem:* ' + v('ct-mensagem'),
+      '',
+      'Autorizo o contato da STRAHL conforme a LGPD.'
+    ];
+    var url = 'https://api.whatsapp.com/send/?phone=' + KIT_WHATSAPP + '&text=' + encodeURIComponent(linhas.join('\n')) + '&type=phone_number&app_absent=0';
+    window.open(url, '_blank');
+    f.reset();
+  }
+
+
+  // ─── Abrir página pelo endereço (#nome-da-pagina), ex.: index.html#home-nova ───
+  function abrirPorHash() {
+    var id = decodeURIComponent((location.hash || '').replace('#', ''));
+    if (id && document.getElementById('page-' + id)) goTo(id);
+  }
+  window.addEventListener('hashchange', abrirPorHash);
+  document.addEventListener('DOMContentLoaded', abrirPorHash);

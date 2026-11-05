@@ -4,3 +4,15 @@ assets/.DS_Store
 
 # PDFs de referência interna — não disponibilizar publicamente
 assets/datasheets/*.pdf
+
+# Material de trabalho local (não publicar)
+backups/
+*.zip
+/*.pdf
+/files/
+/datasheets/
+assets/Qds/
+assets/images/CMAs/
+assets/images/mining/_extraidos/
+# Catálogos e PDFs de referência: entregues só pelo Kit Técnico
+assets/images/**/*.pdf
