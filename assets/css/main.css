@@ -2216,7 +2216,9 @@
   }
   @media (max-width: 760px) {
     .hn-paths { grid-template-columns: 1fr; }
-    .hn-path { grid-template-columns: 110px 1fr; }
+    .hn-path { grid-template-columns: 110px 1fr; align-items: center; }
+    .hn-path > img { min-height: 0; height: auto; aspect-ratio: 1 / 1; }
+    .hn-path:nth-child(2) > img { object-position: right center; }
     .hn-proofs { grid-template-columns: 1fr; }
     .hn-proj, .hn-videos { grid-template-columns: 1fr; }
     .hn-oem-img img { height: 240px; }
@@ -2227,7 +2229,7 @@
     .hn-trust-item:nth-child(2n) { border-right: none !important; }
     .hn-apps { grid-template-columns: 1fr; }
     .hn-path { grid-template-columns: 1fr; }
-    .hn-path > img { min-height: 0; height: 120px; }
+    .hn-path > img { min-height: 0; height: auto; aspect-ratio: 1 / 1; }
   }
 
   /* ═══════════════════════════════════════════════════
