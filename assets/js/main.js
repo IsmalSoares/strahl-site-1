@@ -544,3 +544,31 @@ function dsSetImgCustom(imgId, thumb, src) {
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.busca') && !e.target.closest('.busca-res')) buscaFechar();
   });
+
+  /* ═══════════════════════════════
+     FOTOS AMPLIÁVEIS (.sb-zoom): o zoom do mouse acompanha o cursor; o clique abre em tela cheia
+  ═══════════════════════════════ */
+  document.addEventListener('mousemove', function(e) {
+    var box = e.target.closest && e.target.closest('.sb-zoom');
+    if (!box) return;
+    var r = box.getBoundingClientRect();
+    box.querySelector('img').style.transformOrigin = ((e.clientX - r.left) / r.width * 100) + '% ' + ((e.clientY - r.top) / r.height * 100) + '%';
+  });
+
+  function abrirFoto(btn) {
+    var img = btn.querySelector('img');
+    var ov = document.createElement('figure');
+    ov.className = 'foto-overlay';
+    ov.setAttribute('role', 'dialog');
+    ov.setAttribute('aria-label', img.alt);
+    ov.innerHTML = '<button type="button" class="foto-overlay-fechar" aria-label="Fechar">×</button><img alt=""><figcaption></figcaption>';
+    ov.querySelector('img').src = img.src;
+    ov.querySelector('img').alt = img.alt;
+    ov.querySelector('figcaption').textContent = img.alt;
+    function fechar() { ov.remove(); document.removeEventListener('keydown', esc); btn.focus(); }
+    function esc(e) { if (e.key === 'Escape') fechar(); }
+    ov.addEventListener('click', fechar);
+    document.addEventListener('keydown', esc);
+    document.body.appendChild(ov);
+    ov.querySelector('.foto-overlay-fechar').focus();
+  }
