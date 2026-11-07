@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-ext="" data-busca="fb0c5c40">
+<html lang="pt-BR" data-ext="" data-busca="e414e79e">
 <head>
 <meta charset="utf-8">
 <base href="/strahl-site-1/">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20261107b">
+<link rel="stylesheet" href="assets/css/main.css?v=20261107e">
 <!-- Schema.org: dados estruturados para buscas e AI Overviews -->
 <script type="application/ld+json">
 {
@@ -290,6 +290,7 @@
           <h1>Linha<br><span>Storm Block</span></h1>
           <p class="desc">Plugues, tomadas de sobrepor, tomadas de embutir e acoplamentos industriais com grau de proteção IP67 em toda a linha. Certificados conforme a NBR IEC 60309, para ambientes com água, poeira e operação contínua.</p>
           <button class="btn-primary kit-btn" onclick="abrirKitTecnico('Linha Storm Block')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
+          <p class="kit-nota">Precisa de DWG, datasheet ou de um dado técnico que ainda não está no site? Nossa equipe técnica envia para você.</p>
         </div>
         <div class="linha-hero-img">
           <div class="linha-hero-img-card">
@@ -345,18 +346,19 @@
           <div class="section-label">Sobre a linha</div>
           <h2>O que é a Linha Storm Block?</h2>
           <p>A Linha Storm Block® é a linha de tomadas e plugues industriais da STRAHL com grau de proteção IP67 em todos os modelos: plugues, tomadas de sobrepor, tomadas de embutir e acoplamentos, de 16A a 200A, com 3, 4 ou 5 polos. Os códigos têm o sufixo W.</p>
-          <p>Pinos e buchas são de latão niquelado, com anel de compressão nas buchas para manter o contato firme e evitar aquecimento. Na versão de 200A, as buchas são de cobre-cromo e o prensa-cabo tipo pinça já vem incluso. Os parafusos são de aço inox, e a variante /MINING, em carcaça termoplástica reforçada, chega a 250A.</p>
+          <p>Pinos e buchas são de latão niquelado, com anel de compressão nas buchas para manter o contato firme e evitar aquecimento. Os parafusos são de aço inox, e plugues e acoplamentos de 200A acompanham prensa-cabo tipo pinça. A linha também tem a versão negativa (prefixo N-), tomadas e plugues para containers e tampas de proteção que mantêm o plugue IP67 quando desconectado.</p>
           <button class="btn-primary" style="margin-top:8px" onclick="abrirKitTecnico('Linha Storm Block')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
+          <p class="kit-nota">Precisa de DWG, datasheet ou de um dado técnico que ainda não está no site? Nossa equipe técnica envia para você.</p>
         </div>
         <div class="lr-facts">
           <h3>Em resumo</h3>
           <dl>
-            <dt>Correntes</dt><dd>16A · 32A · 63A · 125A · 200A (até 250A na /MINING)</dd>
+            <dt>Correntes</dt><dd>16A · 32A · 63A · 125A · 200A</dd>
             <dt>Polos</dt><dd>3P · 4P · 5P</dd>
             <dt>Tensão</dt><dd>24V a 690V</dd>
             <dt>Proteção</dt><dd>IP67 em toda a linha</dd>
-            <dt>Produtos</dt><dd>Plugue · tomada de sobrepor · tomada de embutir · acoplamento</dd>
-            <dt>Contatos</dt><dd>Latão niquelado com anel de compressão; cobre-cromo em 200A</dd>
+            <dt>Produtos</dt><dd>Plugue · tomada de sobrepor · tomada de embutir · acoplamento · versão negativa · containers · tampa de proteção</dd>
+            <dt>Contatos</dt><dd>Latão niquelado, com anel de compressão nas buchas</dd>
             <dt>Fixação</dt><dd>Parafusos em aço inox</dd>
             <dt>Normas</dt><dd>NBR IEC 60309 · CEE 17 · VDE 0623</dd>
             <dt>Fabricação</dt><dd>Nacional, STRAHL, desde 1986</dd>
@@ -395,7 +397,7 @@
         <div class="dif-card">
           <div class="dif-tag"><img src="assets/images/icons/shield.svg" class="icon icon-red" style="width:16px;height:16px"> Condutividade</div>
           <h3>Anel de Compressão nas Buchas</h3>
-          <p>Mantém contato preciso entre pino e bucha, evitando aquecimento. Na versão 200A as buchas são em cobre-cromo para conduzir melhor em alta corrente.</p>
+          <p>Mantém contato preciso entre pino e bucha, evitando aquecimento. Vale para toda a linha, de 16A a 200A.</p>
           <div class="dif-tags-row">
             <span class="dif-pill">Baixa Resistência de Contato</span>
           </div>
@@ -404,7 +406,9 @@
     </div>
   </section>
 
-  <!-- SELECTION TABLES -->
+  <!-- SELECTION TABLES
+       Fonte: catálogo StormBlock_Toma Containers.pdf (Storm Block 16A a 200A, negativos, containers e tampas de proteção).
+       Gerado por build_storm_abas.py. FOTOS de Containers e Tampas: assets/images/Storm Block/containers/ -->
   <section class="py-section selection-section">
     <div class="container">
 
@@ -419,16 +423,17 @@
             <a class="mining-series-btn" id="sbtab-embutir" onclick="sbTab(this,'embutir')" href="javascript:void(0)">Tomadas de Embutir</a>
             <a class="mining-series-btn" id="sbtab-acoplamentos" onclick="sbTab(this,'acoplamentos')" href="javascript:void(0)">Acoplamentos</a>
             <a class="mining-series-btn" id="sbtab-negativos" onclick="sbTab(this,'negativos')" href="javascript:void(0)">Negativos</a>
+            <a class="mining-series-btn" id="sbtab-containers" onclick="sbTab(this,'containers')" href="javascript:void(0)">Containers</a>
+            <a class="mining-series-btn" id="sbtab-tampas" onclick="sbTab(this,'tampas')" href="javascript:void(0)">Tampas de Proteção</a>
           </div>
         </div>
       </div>
 
-      <!-- ═══ PLUGUES ═══ -->
       <div class="sb-panel" id="sb-plugues">
 
         <!-- Fotos modelo -->
-        <div style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
-          <div style="display:flex;gap:10px;flex-shrink:0">
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
             <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
               <img src="assets/images/Storm%20Block/4079W.jpg" alt="Plugue Industrial Storm Block 4079W" style="width:100%;height:100%;object-fit:contain;padding:8px">
               <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4079W · 16A</div>
@@ -441,7 +446,7 @@
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Plugues · Série W · IP67</div>
             <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Plugues Industriais Storm Block</h3>
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Pinos e buchas em latão niquelado com anel de compressão. Parafusos inox. Prensa-cabo tipo pinça incluso nos modelos 200A. Disponível em 3, 4 e 5 polos · de 16A a 200A.</p>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Pinos do contato em latão niquelado, com alta resistência à abrasão e à oxidação. Parafusos em aço inox. De 16A a 200A, com 3, 4 ou 5 polos. Os plugues de 200A acompanham prensa-cabo tipo pinça.</p>
           </div>
         </div>
 
@@ -459,8 +464,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3072W</a></td><td><a class="sku" href="#">3074W</a></td><td><a class="sku" href="#">3076W</a></td><td><a class="sku" href="#">3079W</a></td><td><a class="sku" href="#">3077W</a></td><td><a class="sku" href="#">30711W</a></td><td><a class="sku" href="#">3075W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4072W</a></td><td><a class="sku" href="#">4074W</a></td><td><a class="sku" href="#">4079W</a></td><td><a class="sku" href="#">4076W</a></td><td><a class="sku" href="#">4077W</a></td><td><a class="sku" href="#">40711W</a></td><td><a class="sku" href="#">4075W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5072W</a></td><td><a class="sku" href="#">5074W</a></td><td><a class="sku" href="#">5079W</a></td><td><a class="sku" href="#">5076W</a></td><td><a class="sku" href="#">5077W</a></td><td><a class="sku" href="#">50711W</a></td><td><a class="sku" href="#">5075W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4072W</a></td><td><a class="sku" href="#">4074W</a></td><td><a class="sku" href="#">4076W</a></td><td><a class="sku" href="#">4079W</a></td><td><a class="sku" href="#">4077W</a></td><td><a class="sku" href="#">40711W</a></td><td><a class="sku" href="#">4075W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5072W</a></td><td><a class="sku" href="#">5074W</a></td><td><a class="sku" href="#">5076W</a></td><td><a class="sku" href="#">5079W</a></td><td><a class="sku" href="#">5077W</a></td><td><a class="sku" href="#">50711W</a></td><td><a class="sku" href="#">5075W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -470,8 +475,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3272W</a></td><td><a class="sku" href="#">3274W</a></td><td><a class="sku" href="#">3276W</a></td><td><a class="sku" href="#">3279W</a></td><td><a class="sku" href="#">3277W</a></td><td><a class="sku" href="#">32711W</a></td><td><a class="sku" href="#">3275W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4272W</a></td><td><a class="sku" href="#">4274W</a></td><td><a class="sku" href="#">4279W</a></td><td><a class="sku" href="#">4276W</a></td><td><a class="sku" href="#">4277W</a></td><td><a class="sku" href="#">42711W</a></td><td><a class="sku" href="#">4275W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5272W</a></td><td><a class="sku" href="#">5274W</a></td><td><a class="sku" href="#">5279W</a></td><td><a class="sku" href="#">5276W</a></td><td><a class="sku" href="#">5277W</a></td><td><a class="sku" href="#">52711W</a></td><td><a class="sku" href="#">5275W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4272W</a></td><td><a class="sku" href="#">4274W</a></td><td><a class="sku" href="#">4276W</a></td><td><a class="sku" href="#">4279W</a></td><td><a class="sku" href="#">4277W</a></td><td><a class="sku" href="#">42711W</a></td><td><a class="sku" href="#">4275W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5272W</a></td><td><a class="sku" href="#">5274W</a></td><td><a class="sku" href="#">5276W</a></td><td><a class="sku" href="#">5279W</a></td><td><a class="sku" href="#">5277W</a></td><td><a class="sku" href="#">52711W</a></td><td><a class="sku" href="#">5275W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -481,8 +486,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3572W</a></td><td><a class="sku" href="#">3574W</a></td><td><a class="sku" href="#">3576W</a></td><td><a class="sku" href="#">3579W</a></td><td><a class="sku" href="#">3577W</a></td><td><a class="sku" href="#">35711W</a></td><td><a class="sku" href="#">3575W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4572W</a></td><td><a class="sku" href="#">4574W</a></td><td><a class="sku" href="#">4579W</a></td><td><a class="sku" href="#">4576W</a></td><td><a class="sku" href="#">4577W</a></td><td><a class="sku" href="#">45711W</a></td><td><a class="sku" href="#">4575W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5572W</a></td><td><a class="sku" href="#">5574W</a></td><td><a class="sku" href="#">5579W</a></td><td><a class="sku" href="#">5576W</a></td><td><a class="sku" href="#">5577W</a></td><td><a class="sku" href="#">55711W</a></td><td><a class="sku" href="#">5575W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4572W</a></td><td><a class="sku" href="#">4574W</a></td><td><a class="sku" href="#">4576W</a></td><td><a class="sku" href="#">4579W</a></td><td><a class="sku" href="#">4577W</a></td><td><a class="sku" href="#">45711W</a></td><td><a class="sku" href="#">4575W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5572W</a></td><td><a class="sku" href="#">5574W</a></td><td><a class="sku" href="#">5576W</a></td><td><a class="sku" href="#">5579W</a></td><td><a class="sku" href="#">5577W</a></td><td><a class="sku" href="#">55711W</a></td><td><a class="sku" href="#">5575W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -509,36 +514,30 @@
             </table>
           </div>
         </div>
-        <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos. · Série N- disponível: veja a aba <strong>Negativos</strong>.</p>
+        <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos.</p>
       </div><!-- /sb-plugues -->
-
-      <!-- ═══ TOMADAS DE SOBREPOR ═══ -->
       <div class="sb-panel" id="sb-sobrepor" style="display:none">
 
-        <!-- Foto modelo -->
-        <div style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
-          <div style="display:flex;gap:10px;flex-shrink:0">
+        <!-- Fotos modelo -->
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
             <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4009W.jpg" alt="Tomada Sobrepor 4009W" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <img src="assets/images/Storm%20Block/4009W.jpg" alt="Tomada de Sobrepor Storm Block 4009W" style="width:100%;height:100%;object-fit:contain;padding:8px">
               <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4009W · 16A</div>
-            </div>
-            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4806W.jpg" alt="Tomada Sobrepor 4806W 200A" style="width:100%;height:100%;object-fit:contain;padding:8px">
-              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4806W · 200A</div>
             </div>
           </div>
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Tomadas de Sobrepor · Série W · IP67</div>
-            <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Tomadas de Sobrepor Storm Block</h3>
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Montagem em superfície. Buchas em latão niquelado com anel de compressão. Disponível em 3, 4 e 5 polos · de 16A a 200A.</p>
+            <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Tomadas de Sobrepor 16A a 125A</h3>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Buchas em latão niquelado com anel de compressão, que mantêm o contato firme entre pino e bucha e evitam aquecimento. Parafusos em aço inox. De 16A a 125A, com 3, 4 ou 5 polos.</p>
           </div>
         </div>
 
         <div class="ip-block">
           <div class="ip-header">
             <div>
-              <h3>Seleção de Tomadas de Sobrepor · Série W · IP67</h3>
-              <p>Montagem em superfície · NBR IEC 60309 / CEE 17 / VDE 0623</p>
+              <h3>Seleção de Tomadas de Sobrepor 16A a 125A · Série W · IP67</h3>
+              <p>NBR IEC 60309 / CEE 17 / VDE 0623 · Sufixo W = Linha Storm Block</p>
             </div>
             <div class="ip-badge red">Grau de Proteção IP67</div>
           </div>
@@ -548,8 +547,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3002W</a></td><td><a class="sku" href="#">3004W</a></td><td><a class="sku" href="#">3006W</a></td><td><a class="sku" href="#">3009W</a></td><td><a class="sku" href="#">3007W</a></td><td><a class="sku" href="#">30011W</a></td><td><a class="sku" href="#">3005W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4002W</a></td><td><a class="sku" href="#">4004W</a></td><td><a class="sku" href="#">4009W</a></td><td><a class="sku" href="#">4006W</a></td><td><a class="sku" href="#">4007W</a></td><td><a class="sku" href="#">40011W</a></td><td><a class="sku" href="#">4005W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5002W</a></td><td><a class="sku" href="#">5004W</a></td><td><a class="sku" href="#">5009W</a></td><td><a class="sku" href="#">5006W</a></td><td><a class="sku" href="#">5007W</a></td><td><a class="sku" href="#">50011W</a></td><td><a class="sku" href="#">5005W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4002W</a></td><td><a class="sku" href="#">4004W</a></td><td><a class="sku" href="#">4006W</a></td><td><a class="sku" href="#">4009W</a></td><td><a class="sku" href="#">4007W</a></td><td><a class="sku" href="#">40011W</a></td><td><a class="sku" href="#">4005W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5002W</a></td><td><a class="sku" href="#">5004W</a></td><td><a class="sku" href="#">5006W</a></td><td><a class="sku" href="#">5009W</a></td><td><a class="sku" href="#">5007W</a></td><td><a class="sku" href="#">50011W</a></td><td><a class="sku" href="#">5005W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -559,8 +558,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3202W</a></td><td><a class="sku" href="#">3204W</a></td><td><a class="sku" href="#">3206W</a></td><td><a class="sku" href="#">3209W</a></td><td><a class="sku" href="#">3207W</a></td><td><a class="sku" href="#">32011W</a></td><td><a class="sku" href="#">3205W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4202W</a></td><td><a class="sku" href="#">4204W</a></td><td><a class="sku" href="#">4209W</a></td><td><a class="sku" href="#">4206W</a></td><td><a class="sku" href="#">4207W</a></td><td><a class="sku" href="#">42011W</a></td><td><a class="sku" href="#">4205W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5202W</a></td><td><a class="sku" href="#">5204W</a></td><td><a class="sku" href="#">5209W</a></td><td><a class="sku" href="#">5206W</a></td><td><a class="sku" href="#">5207W</a></td><td><a class="sku" href="#">52011W</a></td><td><a class="sku" href="#">5205W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4202W</a></td><td><a class="sku" href="#">4204W</a></td><td><a class="sku" href="#">4206W</a></td><td><a class="sku" href="#">4209W</a></td><td><a class="sku" href="#">4207W</a></td><td><a class="sku" href="#">42011W</a></td><td><a class="sku" href="#">4205W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5202W</a></td><td><a class="sku" href="#">5204W</a></td><td><a class="sku" href="#">5206W</a></td><td><a class="sku" href="#">5209W</a></td><td><a class="sku" href="#">5207W</a></td><td><a class="sku" href="#">52011W</a></td><td><a class="sku" href="#">5205W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -570,8 +569,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3502W</a></td><td><a class="sku" href="#">3504W</a></td><td><a class="sku" href="#">3506W</a></td><td><a class="sku" href="#">3509W</a></td><td><a class="sku" href="#">3507W</a></td><td><a class="sku" href="#">35011W</a></td><td><a class="sku" href="#">3505W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4502W</a></td><td><a class="sku" href="#">4504W</a></td><td><a class="sku" href="#">4509W</a></td><td><a class="sku" href="#">4506W</a></td><td><a class="sku" href="#">4507W</a></td><td><a class="sku" href="#">45011W</a></td><td><a class="sku" href="#">4505W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5502W</a></td><td><a class="sku" href="#">5504W</a></td><td><a class="sku" href="#">5509W</a></td><td><a class="sku" href="#">5506W</a></td><td><a class="sku" href="#">5507W</a></td><td><a class="sku" href="#">55011W</a></td><td><a class="sku" href="#">5505W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4502W</a></td><td><a class="sku" href="#">4504W</a></td><td><a class="sku" href="#">4506W</a></td><td><a class="sku" href="#">4509W</a></td><td><a class="sku" href="#">4507W</a></td><td><a class="sku" href="#">45011W</a></td><td><a class="sku" href="#">4505W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5502W</a></td><td><a class="sku" href="#">5504W</a></td><td><a class="sku" href="#">5506W</a></td><td><a class="sku" href="#">5509W</a></td><td><a class="sku" href="#">5507W</a></td><td><a class="sku" href="#">55011W</a></td><td><a class="sku" href="#">5505W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -586,6 +585,34 @@
               </tbody>
             </table>
           </div>
+        </div>
+        <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos.</p>
+      </div><!-- /sb-sobrepor -->
+      <div class="sb-panel" id="sb-sobrepor200" style="display:none">
+
+        <!-- Fotos modelo -->
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/4806W.jpg" alt="Tomada de Sobrepor Storm Block 4806W 200A" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4806W · 200A</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Tomadas de Sobrepor · 200A · IP67</div>
+            <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Tomadas de Sobrepor 200A</h3>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Tomada montada em caixa, com dimensões de 407 × 171 mm. Buchas em latão niquelado com anel de compressão e parafusos em aço inox. Disponível em 3, 4 ou 5 polos.</p>
+          </div>
+        </div>
+
+        <div class="ip-block">
+          <div class="ip-header">
+            <div>
+              <h3>Seleção de Tomadas de Sobrepor 200A · Série W · IP67</h3>
+              <p>NBR IEC 60309 / CEE 17 / VDE 0623 · Sufixo W = Linha Storm Block</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
           <div class="ampere-block">
             <div class="ampere-label">Versão 200A</div>
             <table class="sel-table">
@@ -598,28 +625,26 @@
             </table>
           </div>
         </div>
-        <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos. · Série N- disponível: acrescente prefixo N- ao código (ex: N-3006W).</p>
-      </div><!-- /sb-sobrepor -->
-
-      <!-- ═══ TOMADAS DE EMBUTIR ═══ -->
+        <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos.</p>
+      </div><!-- /sb-sobrepor200 -->
       <div class="sb-panel" id="sb-embutir" style="display:none">
 
         <!-- Fotos modelo -->
-        <div style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
-          <div style="display:flex;gap:10px;flex-shrink:0">
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
             <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4046W.jpg" alt="Tomada Embutir 4046W" style="width:100%;height:100%;object-fit:contain;padding:8px">
-              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4046W · 32A</div>
+              <img src="assets/images/Storm%20Block/4046W.jpg" alt="Tomada de Embutir Storm Block 4046W" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4046W · 16A</div>
             </div>
             <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4849W.jpg" alt="Tomada Embutir 4849W MINING" style="width:100%;height:100%;object-fit:contain;padding:8px">
-              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4849/MINING · 200A</div>
+              <img src="assets/images/Storm%20Block/4849W.jpg" alt="Tomada de Embutir Storm Block 4849W 200A" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4849W · 200A</div>
             </div>
           </div>
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Tomadas de Embutir · Série W · IP67</div>
             <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Tomadas de Embutir Storm Block</h3>
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Montagem embutida. Furação Ø64mm (16A/32A), Ø86mm (63A/125A) e Ø110mm (/MINING 200A a 250A). Variante /MINING em carcaça termoplástica reforçada.</p>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Montagem embutida, com furação Ø64 mm (16A, e 32A de 3 e 4 polos) e Ø86 mm (32A de 5 polos, 63A e 125A). A versão de 200A tem flange de 110 × 110 mm. Buchas em latão niquelado com anel de compressão e parafusos em aço inox.</p>
           </div>
         </div>
 
@@ -627,7 +652,7 @@
           <div class="ip-header">
             <div>
               <h3>Seleção de Tomadas de Embutir · Série W · IP67</h3>
-              <p>Montagem embutida · NBR IEC 60309 / CEE 17 / VDE 0623</p>
+              <p>Montagem embutida · NBR IEC 60309 / CEE 17 / VDE 0623 · Sufixo W = Linha Storm Block</p>
             </div>
             <div class="ip-badge red">Grau de Proteção IP67</div>
           </div>
@@ -637,8 +662,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3042W</a></td><td><a class="sku" href="#">3044W</a></td><td><a class="sku" href="#">3046W</a></td><td><a class="sku" href="#">3049W</a></td><td><a class="sku" href="#">3047W</a></td><td><a class="sku" href="#">30411W</a></td><td><a class="sku" href="#">3045W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4042W</a></td><td><a class="sku" href="#">4044W</a></td><td><a class="sku" href="#">4049W</a></td><td><a class="sku" href="#">4046W</a></td><td><a class="sku" href="#">4047W</a></td><td><a class="sku" href="#">40411W</a></td><td><a class="sku" href="#">4045W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5042W</a></td><td><a class="sku" href="#">5044W</a></td><td><a class="sku" href="#">5049W</a></td><td><a class="sku" href="#">5046W</a></td><td><a class="sku" href="#">5047W</a></td><td><a class="sku" href="#">50411W</a></td><td><a class="sku" href="#">5045W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4042W</a></td><td><a class="sku" href="#">4044W</a></td><td><a class="sku" href="#">4046W</a></td><td><a class="sku" href="#">4049W</a></td><td><a class="sku" href="#">4047W</a></td><td><a class="sku" href="#">40411W</a></td><td><a class="sku" href="#">4045W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5042W</a></td><td><a class="sku" href="#">5044W</a></td><td><a class="sku" href="#">5046W</a></td><td><a class="sku" href="#">5049W</a></td><td><a class="sku" href="#">5047W</a></td><td><a class="sku" href="#">50411W</a></td><td><a class="sku" href="#">5045W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -648,8 +673,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3242W</a></td><td><a class="sku" href="#">3244W</a></td><td><a class="sku" href="#">3246W</a></td><td><a class="sku" href="#">3249W</a></td><td><a class="sku" href="#">3247W</a></td><td><a class="sku" href="#">32411W</a></td><td><a class="sku" href="#">3245W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4242W</a></td><td><a class="sku" href="#">4244W</a></td><td><a class="sku" href="#">4249W</a></td><td><a class="sku" href="#">4246W</a></td><td><a class="sku" href="#">4247W</a></td><td><a class="sku" href="#">42411W</a></td><td><a class="sku" href="#">4245W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5242W</a></td><td><a class="sku" href="#">5244W</a></td><td><a class="sku" href="#">5249W</a></td><td><a class="sku" href="#">5246W</a></td><td><a class="sku" href="#">5247W</a></td><td><a class="sku" href="#">52411W</a></td><td><a class="sku" href="#">5245W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4242W</a></td><td><a class="sku" href="#">4244W</a></td><td><a class="sku" href="#">4246W</a></td><td><a class="sku" href="#">4249W</a></td><td><a class="sku" href="#">4247W</a></td><td><a class="sku" href="#">42411W</a></td><td><a class="sku" href="#">4245W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5242W</a></td><td><a class="sku" href="#">5244W</a></td><td><a class="sku" href="#">5246W</a></td><td><a class="sku" href="#">5249W</a></td><td><a class="sku" href="#">5247W</a></td><td><a class="sku" href="#">52411W</a></td><td><a class="sku" href="#">5245W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -659,8 +684,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3542W</a></td><td><a class="sku" href="#">3544W</a></td><td><a class="sku" href="#">3546W</a></td><td><a class="sku" href="#">3549W</a></td><td><a class="sku" href="#">3547W</a></td><td><a class="sku" href="#">35411W</a></td><td><a class="sku" href="#">3545W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4542W</a></td><td><a class="sku" href="#">4544W</a></td><td><a class="sku" href="#">4549W</a></td><td><a class="sku" href="#">4546W</a></td><td><a class="sku" href="#">4547W</a></td><td><a class="sku" href="#">45411W</a></td><td><a class="sku" href="#">4545W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5542W</a></td><td><a class="sku" href="#">5544W</a></td><td><a class="sku" href="#">5549W</a></td><td><a class="sku" href="#">5546W</a></td><td><a class="sku" href="#">5547W</a></td><td><a class="sku" href="#">55411W</a></td><td><a class="sku" href="#">5545W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4542W</a></td><td><a class="sku" href="#">4544W</a></td><td><a class="sku" href="#">4546W</a></td><td><a class="sku" href="#">4549W</a></td><td><a class="sku" href="#">4547W</a></td><td><a class="sku" href="#">45411W</a></td><td><a class="sku" href="#">4545W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5542W</a></td><td><a class="sku" href="#">5544W</a></td><td><a class="sku" href="#">5546W</a></td><td><a class="sku" href="#">5549W</a></td><td><a class="sku" href="#">5547W</a></td><td><a class="sku" href="#">55411W</a></td><td><a class="sku" href="#">5545W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -675,57 +700,38 @@
               </tbody>
             </table>
           </div>
-        </div>
-
-        <!-- MINING Embutir -->
-        <div class="ip-block" style="margin-top:32px">
-          <div class="ip-header">
-            <div>
-              <h3>Tomadas de Embutir /MINING · Carcaça Termoplástica</h3>
-              <p>Alta corrente · Furação Ø110mm · Para outras tensões, consulte-nos</p>
-            </div>
-            <div class="ip-badge">MINING</div>
-          </div>
           <div class="ampere-block">
+            <div class="ampere-label">Versão 200A</div>
             <table class="sel-table">
-              <thead><tr><th>Produto</th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
-                <tr><td>125A 3P+T</td><td><a class="sku" href="#">4649/MINING</a></td><td><a class="sku" href="#">4646/MINING</a></td><td><a class="sku" href="#">4647/MINING</a></td><td><a class="sku" href="#">46411/MINING</a></td><td><a class="sku" href="#">4645/MINING</a></td></tr>
-                <tr><td>125A 3P+N+T</td><td><a class="sku" href="#">5649/MINING</a></td><td><a class="sku" href="#">5646/MINING</a></td><td><a class="sku" href="#">5647/MINING</a></td><td><a class="sku" href="#">56411/MINING</a></td><td><a class="sku" href="#">5645/MINING</a></td></tr>
-                <tr><td>200A 3P+T</td><td><a class="sku" href="#">4849/MINING</a></td><td><a class="sku" href="#">4846/MINING</a></td><td><a class="sku" href="#">4847/MINING</a></td><td><a class="sku" href="#">48411/MINING</a></td><td><a class="sku" href="#">4845/MINING</a></td></tr>
-                <tr><td>200A 3P+N+T</td><td><a class="sku" href="#">5849/MINING</a></td><td><a class="sku" href="#">5846/MINING</a></td><td><a class="sku" href="#">5847/MINING</a></td><td><a class="sku" href="#">58411/MINING</a></td><td><a class="sku" href="#">5845/MINING</a></td></tr>
-                <tr><td>250A 3P+T</td><td><a class="sku" href="#">4949/MINING</a></td><td><a class="sku" href="#">4946/MINING</a></td><td><a class="sku" href="#">4947/MINING</a></td><td><a class="sku" href="#">49411/MINING</a></td><td><a class="sku" href="#">4945/MINING</a></td></tr>
-                <tr><td>250A 3P+N+T</td><td><a class="sku" href="#">5949/MINING</a></td><td><a class="sku" href="#">5946/MINING</a></td><td><a class="sku" href="#">5947/MINING</a></td><td><a class="sku" href="#">59411/MINING</a></td><td><a class="sku" href="#">5945/MINING</a></td></tr>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3842W</a></td><td><a class="sku" href="#">3844W</a></td><td><a class="sku" href="#">3846W</a></td><td><a class="sku" href="#">3849W</a></td><td><a class="sku" href="#">3847W</a></td><td><a class="sku" href="#">38411W</a></td><td><a class="sku" href="#">3845W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4842W</a></td><td><a class="sku" href="#">4844W</a></td><td><a class="sku" href="#">4846W</a></td><td><a class="sku" href="#">4849W</a></td><td><a class="sku" href="#">4847W</a></td><td><a class="sku" href="#">48411W</a></td><td><a class="sku" href="#">4845W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5842W</a></td><td><a class="sku" href="#">5844W</a></td><td><a class="sku" href="#">5846W</a></td><td><a class="sku" href="#">5849W</a></td><td><a class="sku" href="#">5847W</a></td><td><a class="sku" href="#">58411W</a></td><td><a class="sku" href="#">5845W</a></td></tr>
               </tbody>
             </table>
           </div>
         </div>
         <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos.</p>
       </div><!-- /sb-embutir -->
-
-      <!-- ═══ ACOPLAMENTOS ═══ -->
       <div class="sb-panel" id="sb-acoplamentos" style="display:none">
 
         <!-- Fotos modelo -->
-        <div style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
-          <div style="display:flex;gap:10px;flex-shrink:0">
-            <div style="width:110px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4556W.jpg" alt="Acoplamento 4556W" style="width:100%;aspect-ratio:1;object-fit:contain;padding:8px">
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/4556W.jpg" alt="Acoplamento Storm Block 4556W" style="width:100%;height:100%;object-fit:contain;padding:8px">
               <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4556W · 63A</div>
             </div>
-            <div style="width:110px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4575W.jpg" alt="Acoplamento 4575W" style="width:100%;aspect-ratio:1;object-fit:contain;padding:8px">
-              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4575W · 63A</div>
-            </div>
-            <div style="width:110px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
-              <img src="assets/images/Storm%20Block/4857W.jpg" alt="Acoplamento 4857W 200A" style="width:100%;aspect-ratio:1;object-fit:contain;padding:8px">
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/4857W.jpg" alt="Acoplamento Storm Block 4857W 200A" style="width:100%;height:100%;object-fit:contain;padding:8px">
               <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">4857W · 200A</div>
             </div>
           </div>
           <div>
             <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Acoplamentos · Série W · IP67</div>
             <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Acoplamentos Storm Block</h3>
-            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Conector cabo-a-cabo IP67. Prensa-cabo tipo pinça incluso nos modelos 200A. Variante /MINING em carcaça termoplástica reforçada para até 250A.</p>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Para emenda cabo a cabo. Acompanham prensa-cabo tipo pinça, que evita que os fios se soltem no contato. Buchas em latão niquelado com anel de compressão e parafusos em aço inox. De 16A a 200A.</p>
           </div>
         </div>
 
@@ -733,7 +739,7 @@
           <div class="ip-header">
             <div>
               <h3>Seleção de Acoplamentos · Série W · IP67</h3>
-              <p>Conector cabo-a-cabo · NBR IEC 60309 / CEE 17 / VDE 0623</p>
+              <p>Cabo a cabo · NBR IEC 60309 / CEE 17 / VDE 0623 · Sufixo W = Linha Storm Block</p>
             </div>
             <div class="ip-badge red">Grau de Proteção IP67</div>
           </div>
@@ -743,8 +749,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3052W</a></td><td><a class="sku" href="#">3054W</a></td><td><a class="sku" href="#">3056W</a></td><td><a class="sku" href="#">3059W</a></td><td><a class="sku" href="#">3057W</a></td><td><a class="sku" href="#">30511W</a></td><td><a class="sku" href="#">3055W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4052W</a></td><td><a class="sku" href="#">4054W</a></td><td><a class="sku" href="#">4059W</a></td><td><a class="sku" href="#">4056W</a></td><td><a class="sku" href="#">4057W</a></td><td><a class="sku" href="#">40511W</a></td><td><a class="sku" href="#">4055W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5052W</a></td><td><a class="sku" href="#">5054W</a></td><td><a class="sku" href="#">5059W</a></td><td><a class="sku" href="#">5056W</a></td><td><a class="sku" href="#">5057W</a></td><td><a class="sku" href="#">50511W</a></td><td><a class="sku" href="#">5055W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4052W</a></td><td><a class="sku" href="#">4054W</a></td><td><a class="sku" href="#">4056W</a></td><td><a class="sku" href="#">4059W</a></td><td><a class="sku" href="#">4057W</a></td><td><a class="sku" href="#">40511W</a></td><td><a class="sku" href="#">4055W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5052W</a></td><td><a class="sku" href="#">5054W</a></td><td><a class="sku" href="#">5056W</a></td><td><a class="sku" href="#">5059W</a></td><td><a class="sku" href="#">5057W</a></td><td><a class="sku" href="#">50511W</a></td><td><a class="sku" href="#">5055W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -754,8 +760,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3252W</a></td><td><a class="sku" href="#">3254W</a></td><td><a class="sku" href="#">3256W</a></td><td><a class="sku" href="#">3259W</a></td><td><a class="sku" href="#">3257W</a></td><td><a class="sku" href="#">32511W</a></td><td><a class="sku" href="#">3255W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4252W</a></td><td><a class="sku" href="#">4254W</a></td><td><a class="sku" href="#">4259W</a></td><td><a class="sku" href="#">4256W</a></td><td><a class="sku" href="#">4257W</a></td><td><a class="sku" href="#">42511W</a></td><td><a class="sku" href="#">4255W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5252W</a></td><td><a class="sku" href="#">5254W</a></td><td><a class="sku" href="#">5259W</a></td><td><a class="sku" href="#">5256W</a></td><td><a class="sku" href="#">5257W</a></td><td><a class="sku" href="#">52511W</a></td><td><a class="sku" href="#">5255W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4252W</a></td><td><a class="sku" href="#">4254W</a></td><td><a class="sku" href="#">4256W</a></td><td><a class="sku" href="#">4259W</a></td><td><a class="sku" href="#">4257W</a></td><td><a class="sku" href="#">42511W</a></td><td><a class="sku" href="#">4255W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5252W</a></td><td><a class="sku" href="#">5254W</a></td><td><a class="sku" href="#">5256W</a></td><td><a class="sku" href="#">5259W</a></td><td><a class="sku" href="#">5257W</a></td><td><a class="sku" href="#">52511W</a></td><td><a class="sku" href="#">5255W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -765,8 +771,8 @@
               <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
                 <tr><td>3 (2P+T)</td><td><a class="sku" href="#">3552W</a></td><td><a class="sku" href="#">3554W</a></td><td><a class="sku" href="#">3556W</a></td><td><a class="sku" href="#">3559W</a></td><td><a class="sku" href="#">3557W</a></td><td><a class="sku" href="#">35511W</a></td><td><a class="sku" href="#">3555W</a></td></tr>
-                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4552W</a></td><td><a class="sku" href="#">4554W</a></td><td><a class="sku" href="#">4559W</a></td><td><a class="sku" href="#">4556W</a></td><td><a class="sku" href="#">4557W</a></td><td><a class="sku" href="#">45511W</a></td><td><a class="sku" href="#">4555W</a></td></tr>
-                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5552W</a></td><td><a class="sku" href="#">5554W</a></td><td><a class="sku" href="#">5559W</a></td><td><a class="sku" href="#">5556W</a></td><td><a class="sku" href="#">5557W</a></td><td><a class="sku" href="#">55511W</a></td><td><a class="sku" href="#">5555W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">4552W</a></td><td><a class="sku" href="#">4554W</a></td><td><a class="sku" href="#">4556W</a></td><td><a class="sku" href="#">4559W</a></td><td><a class="sku" href="#">4557W</a></td><td><a class="sku" href="#">45511W</a></td><td><a class="sku" href="#">4555W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">5552W</a></td><td><a class="sku" href="#">5554W</a></td><td><a class="sku" href="#">5556W</a></td><td><a class="sku" href="#">5559W</a></td><td><a class="sku" href="#">5557W</a></td><td><a class="sku" href="#">55511W</a></td><td><a class="sku" href="#">5555W</a></td></tr>
               </tbody>
             </table>
           </div>
@@ -793,32 +799,381 @@
             </table>
           </div>
         </div>
+        <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos.</p>
+      </div><!-- /sb-acoplamentos -->
+      <div class="sb-panel" id="sb-negativos" style="display:none">
 
-        <!-- MINING Acoplamentos -->
+        <!-- Fotos modelo -->
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/N-4576.jpg" alt="Plugue negativo Storm Block N-4576W" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">N-4576W · Plugue</div>
+            </div>
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/N-4009W.jpg" alt="Tomada de sobrepor negativa N-4009W" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">N-4009W · Sobrepor</div>
+            </div>
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/N-5806W.jpg" alt="Tomada de sobrepor negativa N-5806W 200A" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">N-5806W · 200A</div>
+            </div>
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/N-4046W.jpg" alt="Tomada de embutir negativa N-4046W" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">N-4046W · Embutir</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Tomadas e Plugues Negativos · IP67</div>
+            <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Negativos 16A a 200A</h3>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Versão com os contatos invertidos: o plugue tem buchas em latão niquelado com anel de compressão, e as tomadas têm os pinos do contato em latão niquelado. Os códigos começam com N-. Parafusos em aço inox.</p>
+          </div>
+        </div>
+
+        <div class="ip-block">
+          <div class="ip-header">
+            <div>
+              <h3>Plugues Negativos · IP67</h3>
+              <p>NBR IEC 60309 / CEE 17 / VDE 0623 · Prefixo N- = versão negativa</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 16A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3072W</a></td><td><a class="sku" href="#">N-3074W</a></td><td><a class="sku" href="#">N-3076W</a></td><td><a class="sku" href="#">N-3079W</a></td><td><a class="sku" href="#">N-3077W</a></td><td><a class="sku" href="#">N-30711W</a></td><td><a class="sku" href="#">N-3075W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4072W</a></td><td><a class="sku" href="#">N-4074W</a></td><td><a class="sku" href="#">N-4076W</a></td><td><a class="sku" href="#">N-4079W</a></td><td><a class="sku" href="#">N-4077W</a></td><td><a class="sku" href="#">N-40711W</a></td><td><a class="sku" href="#">N-4075W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5072W</a></td><td><a class="sku" href="#">N-5074W</a></td><td><a class="sku" href="#">N-5076W</a></td><td><a class="sku" href="#">N-5079W</a></td><td><a class="sku" href="#">N-5077W</a></td><td><a class="sku" href="#">N-50711W</a></td><td><a class="sku" href="#">N-5075W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 32A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3272W</a></td><td><a class="sku" href="#">N-3274W</a></td><td><a class="sku" href="#">N-3276W</a></td><td><a class="sku" href="#">N-3279W</a></td><td><a class="sku" href="#">N-3277W</a></td><td><a class="sku" href="#">N-32711W</a></td><td><a class="sku" href="#">N-3275W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4272W</a></td><td><a class="sku" href="#">N-4274W</a></td><td><a class="sku" href="#">N-4276W</a></td><td><a class="sku" href="#">N-4279W</a></td><td><a class="sku" href="#">N-4277W</a></td><td><a class="sku" href="#">N-42711W</a></td><td><a class="sku" href="#">N-4275W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5272W</a></td><td><a class="sku" href="#">N-5274W</a></td><td><a class="sku" href="#">N-5276W</a></td><td><a class="sku" href="#">N-5279W</a></td><td><a class="sku" href="#">N-5277W</a></td><td><a class="sku" href="#">N-52711W</a></td><td><a class="sku" href="#">N-5275W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 63A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3572W</a></td><td><a class="sku" href="#">N-3574W</a></td><td><a class="sku" href="#">N-3576W</a></td><td><a class="sku" href="#">N-3579W</a></td><td><a class="sku" href="#">N-3577W</a></td><td><a class="sku" href="#">N-35711W</a></td><td><a class="sku" href="#">N-3575W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4572W</a></td><td><a class="sku" href="#">N-4574W</a></td><td><a class="sku" href="#">N-4576W</a></td><td><a class="sku" href="#">N-4579W</a></td><td><a class="sku" href="#">N-4577W</a></td><td><a class="sku" href="#">N-45711W</a></td><td><a class="sku" href="#">N-4575W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5572W</a></td><td><a class="sku" href="#">N-5574W</a></td><td><a class="sku" href="#">N-5576W</a></td><td><a class="sku" href="#">N-5579W</a></td><td><a class="sku" href="#">N-5577W</a></td><td><a class="sku" href="#">N-55711W</a></td><td><a class="sku" href="#">N-5575W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 125A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4672W</a></td><td><a class="sku" href="#">N-4674W</a></td><td><a class="sku" href="#">N-4676W</a></td><td><a class="sku" href="#">N-4679W</a></td><td><a class="sku" href="#">N-4677W</a></td><td><a class="sku" href="#">N-46711W</a></td><td><a class="sku" href="#">N-4675W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5672W</a></td><td><a class="sku" href="#">N-5674W</a></td><td><a class="sku" href="#">N-5676W</a></td><td><a class="sku" href="#">N-5679W</a></td><td><a class="sku" href="#">N-5677W</a></td><td><a class="sku" href="#">N-56711W</a></td><td><a class="sku" href="#">N-5675W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 200A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3872W</a></td><td><a class="sku" href="#">N-3874W</a></td><td><a class="sku" href="#">N-3876W</a></td><td><a class="sku" href="#">N-3879W</a></td><td><a class="sku" href="#">N-3877W</a></td><td><a class="sku" href="#">N-38711W</a></td><td><a class="sku" href="#">N-3875W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4872W</a></td><td><a class="sku" href="#">N-4874W</a></td><td><a class="sku" href="#">N-4876W</a></td><td><a class="sku" href="#">N-4879W</a></td><td><a class="sku" href="#">N-4877W</a></td><td><a class="sku" href="#">N-48711W</a></td><td><a class="sku" href="#">N-4875W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5872W</a></td><td><a class="sku" href="#">N-5874W</a></td><td><a class="sku" href="#">N-5876W</a></td><td><a class="sku" href="#">N-5879W</a></td><td><a class="sku" href="#">N-5877W</a></td><td><a class="sku" href="#">N-58711W</a></td><td><a class="sku" href="#">N-5875W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div class="ip-block" style="margin-top:32px">
           <div class="ip-header">
             <div>
-              <h3>Acoplamentos /MINING · Carcaça Termoplástica</h3>
-              <p>Alta corrente · Prensa-cabo tipo pinça incluso · Para outras tensões, consulte-nos</p>
+              <h3>Tomadas de Sobrepor Negativas 16A a 125A · IP67</h3>
+              <p>NBR IEC 60309 / CEE 17 / VDE 0623 · Prefixo N- = versão negativa</p>
             </div>
-            <div class="ip-badge">MINING</div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
           </div>
           <div class="ampere-block">
+            <div class="ampere-label">Versão 16A</div>
             <table class="sel-table">
-              <thead><tr><th>Produto</th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
               <tbody>
-                <tr><td>125A 3P+T</td><td><a class="sku" href="#">4659/MINING</a></td><td><a class="sku" href="#">4656/MINING</a></td><td><a class="sku" href="#">4657/MINING</a></td><td><a class="sku" href="#">46511/MINING</a></td><td><a class="sku" href="#">4655/MINING</a></td></tr>
-                <tr><td>125A 3P+N+T</td><td><a class="sku" href="#">5659/MINING</a></td><td><a class="sku" href="#">5656/MINING</a></td><td><a class="sku" href="#">5657/MINING</a></td><td><a class="sku" href="#">56511/MINING</a></td><td><a class="sku" href="#">5655/MINING</a></td></tr>
-                <tr><td>200A 3P+T</td><td><a class="sku" href="#">4859/MINING</a></td><td><a class="sku" href="#">4856/MINING</a></td><td><a class="sku" href="#">4857/MINING</a></td><td><a class="sku" href="#">48511/MINING</a></td><td><a class="sku" href="#">4855/MINING</a></td></tr>
-                <tr><td>200A 3P+N+T</td><td><a class="sku" href="#">5859/MINING</a></td><td><a class="sku" href="#">5856/MINING</a></td><td><a class="sku" href="#">5857/MINING</a></td><td><a class="sku" href="#">58511/MINING</a></td><td><a class="sku" href="#">5855/MINING</a></td></tr>
-                <tr><td>250A 3P+T</td><td><a class="sku" href="#">4959/MINING</a></td><td><a class="sku" href="#">4956/MINING</a></td><td><a class="sku" href="#">4957/MINING</a></td><td><a class="sku" href="#">49511/MINING</a></td><td><a class="sku" href="#">4955/MINING</a></td></tr>
-                <tr><td>250A 3P+N+T</td><td><a class="sku" href="#">5959/MINING</a></td><td><a class="sku" href="#">5956/MINING</a></td><td><a class="sku" href="#">5957/MINING</a></td><td><a class="sku" href="#">59511/MINING</a></td><td><a class="sku" href="#">5955/MINING</a></td></tr>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3002W</a></td><td><a class="sku" href="#">N-3004W</a></td><td><a class="sku" href="#">N-3006W</a></td><td><a class="sku" href="#">N-3009W</a></td><td><a class="sku" href="#">N-3007W</a></td><td><a class="sku" href="#">N-30011W</a></td><td><a class="sku" href="#">N-3005W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4002W</a></td><td><a class="sku" href="#">N-4004W</a></td><td><a class="sku" href="#">N-4006W</a></td><td><a class="sku" href="#">N-4009W</a></td><td><a class="sku" href="#">N-4007W</a></td><td><a class="sku" href="#">N-40011W</a></td><td><a class="sku" href="#">N-4005W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5002W</a></td><td><a class="sku" href="#">N-5004W</a></td><td><a class="sku" href="#">N-5006W</a></td><td><a class="sku" href="#">N-5009W</a></td><td><a class="sku" href="#">N-5007W</a></td><td><a class="sku" href="#">N-50011W</a></td><td><a class="sku" href="#">N-5005W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 32A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3202W</a></td><td><a class="sku" href="#">N-3204W</a></td><td><a class="sku" href="#">N-3206W</a></td><td><a class="sku" href="#">N-3209W</a></td><td><a class="sku" href="#">N-3207W</a></td><td><a class="sku" href="#">N-32011W</a></td><td><a class="sku" href="#">N-3205W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4202W</a></td><td><a class="sku" href="#">N-4204W</a></td><td><a class="sku" href="#">N-4206W</a></td><td><a class="sku" href="#">N-4209W</a></td><td><a class="sku" href="#">N-4207W</a></td><td><a class="sku" href="#">N-42011W</a></td><td><a class="sku" href="#">N-4205W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5202W</a></td><td><a class="sku" href="#">N-5204W</a></td><td><a class="sku" href="#">N-5206W</a></td><td><a class="sku" href="#">N-5209W</a></td><td><a class="sku" href="#">N-5207W</a></td><td><a class="sku" href="#">N-52011W</a></td><td><a class="sku" href="#">N-5205W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 63A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3502W</a></td><td><a class="sku" href="#">N-3504W</a></td><td><a class="sku" href="#">N-3506W</a></td><td><a class="sku" href="#">N-3509W</a></td><td><a class="sku" href="#">N-3507W</a></td><td><a class="sku" href="#">N-35011W</a></td><td><a class="sku" href="#">N-3505W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4502W</a></td><td><a class="sku" href="#">N-4504W</a></td><td><a class="sku" href="#">N-4506W</a></td><td><a class="sku" href="#">N-4509W</a></td><td><a class="sku" href="#">N-4507W</a></td><td><a class="sku" href="#">N-45011W</a></td><td><a class="sku" href="#">N-4505W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5502W</a></td><td><a class="sku" href="#">N-5504W</a></td><td><a class="sku" href="#">N-5506W</a></td><td><a class="sku" href="#">N-5509W</a></td><td><a class="sku" href="#">N-5507W</a></td><td><a class="sku" href="#">N-55011W</a></td><td><a class="sku" href="#">N-5505W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 125A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3602W</a></td><td><a class="sku" href="#">N-3604W</a></td><td><a class="sku" href="#">N-3606W</a></td><td><a class="sku" href="#">N-3609W</a></td><td><a class="sku" href="#">N-3607W</a></td><td><a class="sku" href="#">N-36011W</a></td><td><a class="sku" href="#">N-3605W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4602W</a></td><td><a class="sku" href="#">N-4604W</a></td><td><a class="sku" href="#">N-4606W</a></td><td><a class="sku" href="#">N-4609W</a></td><td><a class="sku" href="#">N-4607W</a></td><td><a class="sku" href="#">N-46011W</a></td><td><a class="sku" href="#">N-4605W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5602W</a></td><td><a class="sku" href="#">N-5604W</a></td><td><a class="sku" href="#">N-5606W</a></td><td><a class="sku" href="#">N-5609W</a></td><td><a class="sku" href="#">N-5607W</a></td><td><a class="sku" href="#">N-56011W</a></td><td><a class="sku" href="#">N-5605W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="ip-block" style="margin-top:32px">
+          <div class="ip-header">
+            <div>
+              <h3>Tomadas de Sobrepor Negativas 200A · IP67</h3>
+              <p>NBR IEC 60309 / CEE 17 / VDE 0623 · Prefixo N- = versão negativa</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 200A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3802W</a></td><td><a class="sku" href="#">N-3804W</a></td><td><a class="sku" href="#">N-3806W</a></td><td><a class="sku" href="#">N-3809W</a></td><td><a class="sku" href="#">N-3807W</a></td><td><a class="sku" href="#">N-38011W</a></td><td><a class="sku" href="#">N-3805W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4802W</a></td><td><a class="sku" href="#">N-4804W</a></td><td><a class="sku" href="#">N-4806W</a></td><td><a class="sku" href="#">N-4809W</a></td><td><a class="sku" href="#">N-4807W</a></td><td><a class="sku" href="#">N-48011W</a></td><td><a class="sku" href="#">N-4805W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5802W</a></td><td><a class="sku" href="#">N-5804W</a></td><td><a class="sku" href="#">N-5806W</a></td><td><a class="sku" href="#">N-5809W</a></td><td><a class="sku" href="#">N-5807W</a></td><td><a class="sku" href="#">N-58011W</a></td><td><a class="sku" href="#">N-5805W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="ip-block" style="margin-top:32px">
+          <div class="ip-header">
+            <div>
+              <h3>Tomadas de Embutir Negativas · IP67</h3>
+              <p>NBR IEC 60309 / CEE 17 / VDE 0623 · Prefixo N- = versão negativa</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 16A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3042W</a></td><td><a class="sku" href="#">N-3044W</a></td><td><a class="sku" href="#">N-3046W</a></td><td><a class="sku" href="#">N-3049W</a></td><td><a class="sku" href="#">N-3047W</a></td><td><a class="sku" href="#">N-30411W</a></td><td><a class="sku" href="#">N-3045W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4042W</a></td><td><a class="sku" href="#">N-4044W</a></td><td><a class="sku" href="#">N-4046W</a></td><td><a class="sku" href="#">N-4049W</a></td><td><a class="sku" href="#">N-4047W</a></td><td><a class="sku" href="#">N-40411W</a></td><td><a class="sku" href="#">N-4045W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5042W</a></td><td><a class="sku" href="#">N-5044W</a></td><td><a class="sku" href="#">N-5046W</a></td><td><a class="sku" href="#">N-5049W</a></td><td><a class="sku" href="#">N-5047W</a></td><td><a class="sku" href="#">N-50411W</a></td><td><a class="sku" href="#">N-5045W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 32A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3242W</a></td><td><a class="sku" href="#">N-3244W</a></td><td><a class="sku" href="#">N-3246W</a></td><td><a class="sku" href="#">N-3249W</a></td><td><a class="sku" href="#">N-3247W</a></td><td><a class="sku" href="#">N-32411W</a></td><td><a class="sku" href="#">N-3245W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4242W</a></td><td><a class="sku" href="#">N-4244W</a></td><td><a class="sku" href="#">N-4246W</a></td><td><a class="sku" href="#">N-4249W</a></td><td><a class="sku" href="#">N-4247W</a></td><td><a class="sku" href="#">N-42411W</a></td><td><a class="sku" href="#">N-4245W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5242W</a></td><td><a class="sku" href="#">N-5244W</a></td><td><a class="sku" href="#">N-5246W</a></td><td><a class="sku" href="#">N-5249W</a></td><td><a class="sku" href="#">N-5247W</a></td><td><a class="sku" href="#">N-52411W</a></td><td><a class="sku" href="#">N-5245W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 63A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3542W</a></td><td><a class="sku" href="#">N-3544W</a></td><td><a class="sku" href="#">N-3546W</a></td><td><a class="sku" href="#">N-3549W</a></td><td><a class="sku" href="#">N-3547W</a></td><td><a class="sku" href="#">N-35411W</a></td><td><a class="sku" href="#">N-3545W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4542W</a></td><td><a class="sku" href="#">N-4544W</a></td><td><a class="sku" href="#">N-4546W</a></td><td><a class="sku" href="#">N-4549W</a></td><td><a class="sku" href="#">N-4547W</a></td><td><a class="sku" href="#">N-45411W</a></td><td><a class="sku" href="#">N-4545W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5542W</a></td><td><a class="sku" href="#">N-5544W</a></td><td><a class="sku" href="#">N-5546W</a></td><td><a class="sku" href="#">N-5549W</a></td><td><a class="sku" href="#">N-5547W</a></td><td><a class="sku" href="#">N-55411W</a></td><td><a class="sku" href="#">N-5545W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 125A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4642W</a></td><td><a class="sku" href="#">N-4644W</a></td><td><a class="sku" href="#">N-4646W</a></td><td><a class="sku" href="#">N-4649W</a></td><td><a class="sku" href="#">N-4647W</a></td><td><a class="sku" href="#">N-46411W</a></td><td><a class="sku" href="#">N-4645W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5642W</a></td><td><a class="sku" href="#">N-5644W</a></td><td><a class="sku" href="#">N-5646W</a></td><td><a class="sku" href="#">N-5649W</a></td><td><a class="sku" href="#">N-5647W</a></td><td><a class="sku" href="#">N-56411W</a></td><td><a class="sku" href="#">N-5645W</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="ampere-block">
+            <div class="ampere-label">Versão 200A</div>
+            <table class="sel-table">
+              <thead><tr><th>Polos</th><th><span class="v-violet">24V</span></th><th><span class="v-yellow">110/130V</span></th><th><span class="v-blue">200/250V</span></th><th><span class="v-red">380/415V</span></th><th><span class="v-black">480/500V</span></th><th><span class="v-red">440/460V</span></th><th><span class="v-black">600/690V</span></th></tr></thead>
+              <tbody>
+                <tr><td>3 (2P+T)</td><td><a class="sku" href="#">N-3842W</a></td><td><a class="sku" href="#">N-3844W</a></td><td><a class="sku" href="#">N-3846W</a></td><td><a class="sku" href="#">N-3849W</a></td><td><a class="sku" href="#">N-3847W</a></td><td><a class="sku" href="#">N-38411W</a></td><td><a class="sku" href="#">N-3845W</a></td></tr>
+                <tr><td>4 (3P+T)</td><td><a class="sku" href="#">N-4842W</a></td><td><a class="sku" href="#">N-4844W</a></td><td><a class="sku" href="#">N-4846W</a></td><td><a class="sku" href="#">N-4849W</a></td><td><a class="sku" href="#">N-4847W</a></td><td><a class="sku" href="#">N-48411W</a></td><td><a class="sku" href="#">N-4845W</a></td></tr>
+                <tr><td>5 (3P+N+T)</td><td><a class="sku" href="#">N-5842W</a></td><td><a class="sku" href="#">N-5844W</a></td><td><a class="sku" href="#">N-5846W</a></td><td><a class="sku" href="#">N-5849W</a></td><td><a class="sku" href="#">N-5847W</a></td><td><a class="sku" href="#">N-58411W</a></td><td><a class="sku" href="#">N-5845W</a></td></tr>
               </tbody>
             </table>
           </div>
         </div>
         <p style="font-size:11px;color:var(--text-light);margin-top:8px">* Para outras posições horárias (tensões) não listadas, consulte-nos.</p>
-      </div><!-- /sb-acoplamentos -->
+      </div><!-- /sb-negativos -->
+      <div class="sb-panel" id="sb-containers" style="display:none">
+
+        <div class="sb-cont-hero">
+          <img src="assets/images/Storm%20Block/containers/containers-porto.jpg" alt="Tomadas e plugues industriais STRAHL para containers em área portuária" loading="lazy">
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Containers · IP67</div>
+            <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Tomadas e Plugues Industriais para Containers</h3>
+            <p>As linhas Mining Block® e Storm Block® STRAHL têm tomadas e plugues industriais e tomadas com bloqueio mecânico e proteção elétrica para alimentar containers. São indicadas para ambientes agressivos, como áreas portuárias e terminais de containers.</p>
+            <div class="sb-cont-spec">
+              <span>4 polos (3P+T)</span><span>32A</span><span class="red">380/440V</span><span>Posição horária 3h</span>
+            </div>
+            <p style="font-size:12px">Identifique a posição do pino terra pela tomada (fêmea).</p>
+          </div>
+        </div>
+
+        <div class="ip-block">
+          <div class="ip-header">
+            <div>
+              <h3>Tomadas e Plugues Industriais · 3 horas · IP67</h3>
+              <p>3P+T · 32A · 380/440V · NBR IEC 60309 / CEE 17 / VDE 0623</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
+          <div class="sb-cards">
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/4273W.jpg" alt="Plugue 4273W" loading="lazy">
+            <strong>4273W</strong><span>Plugue</span>
+          </div>
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/4203W.jpg" alt="Tomada de Sobrepor 4203W" loading="lazy">
+            <strong>4203W</strong><span>Tomada de Sobrepor</span>
+          </div>
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/4243W.jpg" alt="Tomada de Embutir 4243W" loading="lazy">
+            <strong>4243W</strong><span>Tomada de Embutir</span>
+          </div>
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/4253W.jpg" alt="Acoplamento 4253W" loading="lazy">
+            <strong>4253W</strong><span>Acoplamento</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="ip-block" style="margin-top:32px">
+          <div class="ip-header">
+            <div>
+              <h3>Tomadas com Bloqueio Mecânico e Proteção Elétrica · 3 horas · IP67</h3>
+              <p>3P+T · 32A · 380/440V · Linha Mining Block · NBR IEC 60309 / CEE 17 / VDE 0623</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
+          <div class="sb-cards">
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/BM-4203.jpg" alt="Tomada de Sobrepor com Bloqueio Mecânico BM/4203" loading="lazy">
+            <strong>BM/4203</strong><span>Tomada de Sobrepor com Bloqueio Mecânico</span>
+          </div>
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/BM-4243.jpg" alt="Tomada de Embutir com Bloqueio Mecânico BM/4243" loading="lazy">
+            <strong>BM/4243</strong><span>Tomada de Embutir com Bloqueio Mecânico</span>
+          </div>
+          <div class="sb-card">
+            <img src="assets/images/Storm%20Block/containers/PE-4203-D.jpg" alt="Tomada de Sobrepor com Bloqueio Mecânico e Proteção Elétrica PE/4203-D" loading="lazy">
+            <strong>PE/4203-D</strong><span>Tomada de Sobrepor com Bloqueio Mecânico e Proteção Elétrica</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="ip-block" style="margin-top:32px">
+          <div class="ip-header">
+            <div>
+              <h3>Exemplo de montagem: Quadro de Bloqueio Múltiplo e Proteção para Terminais de Containers</h3>
+              <p>Projeto especial · IP67 · A STRAHL monta o quadro de acordo com a sua necessidade</p>
+            </div>
+            <div class="ip-badge red">Projeto Especial</div>
+          </div>
+          <div class="sb-quadro">
+            <div class="sb-quadro-fotos">
+              <img src="assets/images/Storm%20Block/containers/quadro-bloqueio-multiplo-1.jpg" alt="Quadro de bloqueio múltiplo para containers aberto" loading="lazy">
+              <img src="assets/images/Storm%20Block/containers/quadro-bloqueio-multiplo-2.jpg" alt="Quadro de bloqueio múltiplo com tampa transparente aberta" loading="lazy">
+              <img src="assets/images/Storm%20Block/containers/quadro-bloqueio-multiplo-3.jpg" alt="Quadro de bloqueio múltiplo fechado com tomadas" loading="lazy">
+            </div>
+            <ul class="hn-list">
+              <li>Caixa com tampa transparente, dobradiça e fecho rápido</li>
+              <li>Até 8 tomadas com bloqueio mecânico</li>
+              <li>Corrente nominal: 32A</li>
+              <li>Número de polos: 4 (3P+T)</li>
+              <li>Tensões: 380/440V</li>
+              <li>Posição horária: pino terra 3h</li>
+              <li>Disjuntores de proteção e disjuntor geral</li>
+            </ul>
+          </div>
+          <div style="margin-top:20px">
+            <button class="btn-primary" onclick="abrirKitTecnico('Storm Block: quadro para containers')">SOLICITAR PROJETO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
+          </div>
+        </div>
+      </div><!-- /sb-containers -->
+      <div class="sb-panel" id="sb-tampas" style="display:none">
+
+        <!-- Fotos modelo -->
+        <div class="sb-topo" style="display:flex;align-items:center;gap:24px;background:var(--gray-bg);border:1px solid var(--gray-border);border-radius:8px;padding:20px 28px;margin-bottom:32px">
+          <div class="sb-topo-fotos" style="display:flex;gap:10px;flex-shrink:0;flex-wrap:wrap">
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/containers/tampa-protecao-plugue.jpg" alt="Tampa de proteção montada no plugue" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">Tampa no plugue</div>
+            </div>
+            <div style="width:130px;height:130px;background:#fff;border-radius:6px;overflow:hidden;border:1px solid var(--gray-border)">
+              <img src="assets/images/Storm%20Block/containers/TP-400-630A.jpg" alt="Tampa de proteção TP-400/630A" style="width:100%;height:100%;object-fit:contain;padding:8px">
+              <div style="text-align:center;font-size:10px;color:var(--text-muted);font-family:'Barlow Condensed',sans-serif;font-weight:600;padding-bottom:4px">TP-400/630A</div>
+            </div>
+          </div>
+          <div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Tampa de Proteção para Plugues · IP67</div>
+            <h3 style="font-size:20px;color:var(--navy);margin-bottom:8px;font-family:'Barlow Condensed',sans-serif;font-weight:700">Tampas de Proteção para Plugues</h3>
+            <p style="font-size:13px;color:var(--text-muted);line-height:1.5;margin:0">Protegem os contatos e os componentes internos do plugue móvel e do plugue fixo de embutir contra a entrada de líquidos e poeira quando não estão em uso. Assim o plugue mantém o grau de proteção IP67 mesmo desconectado da tomada.</p>
+          </div>
+        </div>
+
+        <div class="ip-block">
+          <div class="ip-header">
+            <div>
+              <h3>Seleção de Tampas de Proteção · IP67</h3>
+              <p>Para plugues de 16A a 630A</p>
+            </div>
+            <div class="ip-badge red">Grau de Proteção IP67</div>
+          </div>
+          <div class="ampere-block">
+            <table class="sel-table">
+              <thead><tr><th>Código</th><th style="text-align:left">Produto</th></tr></thead>
+              <tbody>
+                <tr><td><a class="sku" href="#">TP-3P/16A</a></td><td style="text-align:left">Tampa para plugues 3 polos (2P+T) 16A</td></tr>
+                <tr><td><a class="sku" href="#">TP-4P/16A</a></td><td style="text-align:left">Tampa para plugues 4 polos (3P+T) 16A</td></tr>
+                <tr><td><a class="sku" href="#">TP-5P/16A</a></td><td style="text-align:left">Tampa para plugues 5 polos (3P+N+T) 16A</td></tr>
+                <tr><td><a class="sku" href="#">TP-32A</a></td><td style="text-align:left">Tampa para plugues 3 e 4 polos (2P+T e 3P+T) 32A</td></tr>
+                <tr><td><a class="sku" href="#">TP-5P/32A</a></td><td style="text-align:left">Tampa para plugues 5 polos (3P+N+T) 32A</td></tr>
+                <tr><td><a class="sku" href="#">TP-63A</a></td><td style="text-align:left">Tampa para plugues 3, 4 e 5 polos (2P+T, 3P+T e 3P+N+T) 63A</td></tr>
+                <tr><td><a class="sku" href="#">TP-125/250A</a></td><td style="text-align:left">Tampa para plugues 3, 4 e 5 polos (2P+T, 3P+T e 3P+N+T) 125A e 250A</td></tr>
+                <tr><td><a class="sku" href="#">TP-400/630A</a></td><td style="text-align:left">Tampa para plugues 4 e 5 polos (3P+T e 3P+N+T) 400A e 630A</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="margin-top:20px"><img src="assets/images/Storm%20Block/containers/tampas-familia.jpg" alt="Família de tampas de proteção STRAHL para plugues" loading="lazy" style="max-width:100%;height:auto;display:block;margin:0 auto"></div>
+        </div>
+      </div><!-- /sb-tampas -->
 
     </div>
   </section>
@@ -871,7 +1226,7 @@
           <div class="section-label" style="color:var(--red)">Garantia STRAHL</div>
           <h2>Indústria Nacional <span>40 Anos</span></h2>
           <ul class="hn-list">
-            <li>A Linha Storm Block projetada e fabricada no Brasil, em planta própria de 20.000 m² em São Paulo (SP)</li>
+            <li>A Linha Storm Block projetada e fabricada no Brasil, em planta de 20.000 m² em São Paulo (SP)</li>
             <li>Processos certificados conforme a NBR ISO 9001, com laboratório próprio de ensaios</li>
             <li>Estoque local e reposição sem depender de importação</li>
             <li>Suporte da engenharia STRAHL para especificação e projetos especiais</li>
@@ -907,7 +1262,7 @@
         <div class="dims-cards" style="grid-template-columns:1fr">
           <div class="dims-card">
             <table class="dims-table">
-              <thead><tr><th>IN (A)</th><th>Polos</th><th>A</th><th>B</th><th>C</th><th>Ø Cabo</th></tr></thead>
+              <thead><tr><th>IN (A)</th><th>Polos</th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
               <tbody>
                 <tr><td>16</td><td>2P+T</td><td>47</td><td>43</td><td>112</td><td>45</td></tr>
                 <tr><td>16</td><td>3P+T</td><td>52</td><td>50</td><td>115</td><td>45</td></tr>
@@ -915,7 +1270,8 @@
                 <tr><td>32</td><td>2P+T</td><td>62</td><td>57</td><td>137</td><td>55</td></tr>
                 <tr><td>32</td><td>3P+T</td><td>62</td><td>57</td><td>137</td><td>55</td></tr>
                 <tr><td>32</td><td>3P+N+T</td><td>70</td><td>65</td><td>143</td><td>55</td></tr>
-                <tr><td>63</td><td>todos</td><td>85</td><td>80</td><td>210</td><td>65</td></tr>
+                <tr><td>63</td><td>2P+T e 3P+T</td><td>85</td><td>80</td><td>210</td><td>65</td></tr>
+                <tr><td>63</td><td>3P+N+T</td><td>85</td><td>80</td><td>210</td><td>62</td></tr>
                 <tr><td>125</td><td>todos</td><td>102</td><td>95</td><td>245</td><td>80</td></tr>
                 <tr><td>200</td><td>todos</td><td>76×168</td><td>-</td><td>225</td><td>70</td></tr>
               </tbody>
@@ -961,21 +1317,28 @@
             <img src="assets/images/Storm%20Block/desenho-tomada-embutir.jpg" alt="Dimensões tomada embutir Storm Block" style="width:100%;border-radius:6px;border:1px solid var(--gray-border)">
           </div>
           <div>
-            <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">200A · Ø Furação 110mm</div>
-            <img src="assets/images/Storm%20Block/desenho-tomada-embutir-200A.jpg" alt="Dimensões tomada embutir Storm Block 200A MINING" style="width:100%;border-radius:6px;border:1px solid var(--gray-border)">
+            <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">200A · Flange 110 × 110 mm</div>
+            <img src="assets/images/Storm%20Block/desenho-tomada-embutir-200A.jpg" alt="Dimensões tomada embutir Storm Block 200A" style="width:100%;border-radius:6px;border:1px solid var(--gray-border)">
           </div>
         </div>
         <div class="dims-cards" style="grid-template-columns:1fr">
           <div class="dims-card">
-            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px">Diâmetro de furação necessário na caixa ou painel</p>
             <table class="dims-table">
-              <thead><tr><th>Corrente</th><th>Ø Furação (mm)</th></tr></thead>
+              <thead><tr><th>IN (A)</th><th>Polos</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th><th>G</th><th>Ø Furação (mm)</th></tr></thead>
               <tbody>
-                <tr><td>16A e 32A</td><td>Ø 64 mm</td></tr>
-                <tr><td>63A e 125A</td><td>Ø 86 mm</td></tr>
-                <tr><td>200A</td><td>Ø 110 mm</td></tr>
+                <tr><td>16</td><td>2P+T</td><td>71</td><td>60</td><td>72</td><td>60</td><td>73</td><td>45</td><td>73</td><td>Ø 64</td></tr>
+                <tr><td>16</td><td>3P+T</td><td>71</td><td>60</td><td>72</td><td>61</td><td>76</td><td>48</td><td>77</td><td>Ø 64</td></tr>
+                <tr><td>16</td><td>3P+N+T</td><td>72</td><td>62</td><td>72</td><td>62</td><td>100</td><td>60</td><td>90</td><td>Ø 64</td></tr>
+                <tr><td>32</td><td>2P+T</td><td>71</td><td>60</td><td>71</td><td>60</td><td>81</td><td>59</td><td>85</td><td>Ø 64</td></tr>
+                <tr><td>32</td><td>3P+T</td><td>71</td><td>59</td><td>71</td><td>60</td><td>81</td><td>59</td><td>85</td><td>Ø 64</td></tr>
+                <tr><td>32</td><td>3P+N+T</td><td>109</td><td>87</td><td>109</td><td>87</td><td>114</td><td>95</td><td>142</td><td>Ø 86</td></tr>
+                <tr><td>63</td><td>2P+T</td><td>109</td><td>87</td><td>109</td><td>87</td><td>114</td><td>98</td><td>145</td><td>Ø 86</td></tr>
+                <tr><td>63</td><td>3P+T</td><td>109</td><td>87</td><td>109</td><td>87</td><td>114</td><td>98</td><td>145</td><td>Ø 86</td></tr>
+                <tr><td>63</td><td>3P+N+T</td><td>109</td><td>87</td><td>109</td><td>87</td><td>114</td><td>98</td><td>145</td><td>Ø 86</td></tr>
+                <tr><td>125</td><td>todos</td><td>109</td><td>89</td><td>110</td><td>88</td><td>127</td><td>110</td><td>167</td><td>Ø 86</td></tr>
               </tbody>
             </table>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:10px">200A: flange de 110 × 110 mm. Medidas no desenho acima.</p>
           </div>
         </div>
       </div>
@@ -990,7 +1353,7 @@
           </div>
           <div>
             <div style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">Acoplamento 200A</div>
-            <img src="assets/images/Storm%20Block/desenho-acoplamento-200A.jpg" alt="Dimensões acoplamento Storm Block 200A MINING" style="width:100%;border-radius:6px;border:1px solid var(--gray-border)">
+            <img src="assets/images/Storm%20Block/desenho-acoplamento-200A.jpg" alt="Dimensões acoplamento Storm Block 200A" style="width:100%;border-radius:6px;border:1px solid var(--gray-border)">
           </div>
         </div>
         <div class="dims-cards" style="grid-template-columns:1fr">
@@ -1198,7 +1561,7 @@
       </details>
       <details>
         <summary>Quais produtos fazem parte da Linha Storm Block?</summary>
-        <p>Plugues, tomadas de sobrepor, tomadas de embutir e acoplamentos cabo a cabo, de 16A a 200A, com 3, 4 ou 5 polos. A variante /MINING, em carcaça termoplástica reforçada, atende tomadas de embutir e acoplamentos de até 250A.</p>
+        <p>Plugues, tomadas de sobrepor, tomadas de embutir e acoplamentos cabo a cabo, de 16A a 200A, com 3, 4 ou 5 polos. Também fazem parte a versão negativa (prefixo N-), as tomadas e plugues para containers (3P+T, 32A, 380/440V, 3h) e as tampas de proteção para plugues.</p>
       </details>
       <details>
         <summary>Para que serve o anel de compressão nas buchas?</summary>
@@ -1206,7 +1569,7 @@
       </details>
       <details>
         <summary>Qual a furação para as tomadas de embutir?</summary>
-        <p>Ø64 mm para 16A e 32A, Ø86 mm para 63A e 125A e Ø110 mm para a variante /MINING de 200A a 250A.</p>
+        <p>Ø64 mm para 16A e para 32A de 3 e 4 polos. Ø86 mm para 32A de 5 polos, 63A e 125A. A tomada de embutir de 200A tem flange de 110 × 110 mm.</p>
       </details>
       <details>
         <summary>Qual a diferença entre a Storm Block e a Linha Cekton?</summary>
@@ -1237,7 +1600,7 @@
       "name": "Quais produtos fazem parte da Linha Storm Block?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Plugues, tomadas de sobrepor, tomadas de embutir e acoplamentos cabo a cabo, de 16A a 200A, com 3, 4 ou 5 polos. A variante /MINING, em carcaça termoplástica reforçada, atende tomadas de embutir e acoplamentos de até 250A."
+        "text": "Plugues, tomadas de sobrepor, tomadas de embutir e acoplamentos cabo a cabo, de 16A a 200A, com 3, 4 ou 5 polos. Também fazem parte a versão negativa (prefixo N-), as tomadas e plugues para containers (3P+T, 32A, 380/440V, 3h) e as tampas de proteção para plugues."
       }
     },
     {
@@ -1253,7 +1616,7 @@
       "name": "Qual a furação para as tomadas de embutir?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Ø64 mm para 16A e 32A, Ø86 mm para 63A e 125A e Ø110 mm para a variante /MINING de 200A a 250A."
+        "text": "Ø64 mm para 16A e para 32A de 3 e 4 polos. Ø86 mm para 32A de 5 polos, 63A e 125A. A tomada de embutir de 200A tem flange de 110 × 110 mm."
       }
     },
     {
@@ -1361,7 +1724,7 @@
       <button type="button" class="kit-close" onclick="fecharKitTecnico()" aria-label="Fechar">×</button>
       <div class="kit-eyebrow">Para projetos e especificação</div>
       <h3 id="kit-titulo">Solicitar <span>Kit Técnico</span></h3>
-      <p>Preencha seus dados e nossa equipe envia o material técnico do produto para o seu projeto.</p>
+      <p>O site traz códigos, especificações e diferenciais de cada linha. Para o seu projeto, nossa equipe técnica envia o material complementar, inclusive arquivos que ainda não estão publicados. Preencha seus dados.</p>
       <div class="kit-items"><span>Datasheet</span><span>Desenhos técnicos</span><span>Arquivos DWG</span><span>Catálogo técnico</span><span>Suporte da engenharia</span></div>
     </div>
     <form class="kit-form" onsubmit="enviarKitTecnico(event)">

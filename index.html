@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-ext="" data-busca="fb0c5c40">
+<html lang="pt-BR" data-ext="" data-busca="e414e79e">
 <head>
 <meta charset="utf-8">
 <base href="/strahl-site-1/">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20261107b">
+<link rel="stylesheet" href="assets/css/main.css?v=20261107e">
 <!-- Schema.org: dados estruturados para buscas e AI Overviews -->
 <script type="application/ld+json">
 {
@@ -294,9 +294,10 @@
         </div>
       </div>
       <div class="hn-hero-actions">
-        <button class="btn-primary" onclick="abrirKitTecnico('Home: contato geral')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
+        <div class="kit-grupo"><button class="btn-primary" onclick="abrirKitTecnico('Home: contato geral')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button><p class="kit-nota">Precisa de DWG, datasheet ou de um dado técnico que ainda não está no site? Nossa equipe técnica envia para você.</p></div>
         <button class="btn-secondary" onclick="window.open('https://loja.strahl.com/','_blank')">COMPRAR ONLINE</button>
       </div>
+      
     </div>
   </section>
 
@@ -305,7 +306,7 @@
     <div class="container">
       <div class="hn-trust-grid">
         <div class="hn-trust-item"><div class="hn-trust-num">40 anos</div><div class="hn-trust-lbl">fabricando no Brasil desde 1986</div></div>
-        <div class="hn-trust-item"><div class="hn-trust-num">20.000 m²</div><div class="hn-trust-lbl">de planta própria em São Paulo</div></div>
+        <div class="hn-trust-item"><div class="hn-trust-num">20.000 m²</div><div class="hn-trust-lbl">de planta em São Paulo</div></div>
         <div class="hn-trust-item"><div class="hn-trust-num">ISO 9001</div><div class="hn-trust-lbl">processos certificados NBR ISO 9001</div></div>
         <div class="hn-trust-item"><div class="hn-trust-num">37</div><div class="hn-trust-lbl">concessionárias de energia homologam nossas caixas</div></div>
         <div class="hn-trust-item"><div class="hn-trust-num">5+</div><div class="hn-trust-lbl">empresas de saneamento: SABESP, CAESB, CORSAN, COPASA, SANASA</div></div>
@@ -420,27 +421,68 @@
     </div>
   </section>
 
-  <!-- ── 5. PARA FABRICANTES DE MÁQUINAS (OEM) ── -->
-  <section class="py-section">
+  <!-- ── 5. TOMADAS E PLUGUES INDUSTRIAIS (todas as linhas) + FORNECIMENTO PARA FABRICANTES (OEM) ── -->
+  <section class="py-section" id="hn-tomadas">
     <div class="container">
-      <div class="hn-oem">
-        <div class="hn-oem-img"><img src="assets/images/banners/banner_cekton.jpg" alt="Tomadas industriais STRAHL para fabricantes de máquinas e equipamentos" loading="lazy"></div>
+      <div class="hn-tom-head">
         <div>
-          <div class="section-label">Para fabricantes de máquinas e equipamentos</div>
-          <h2 class="section-title">A tomada STRAHL dentro do seu produto</h2>
-          <p style="color:var(--text-muted);font-size:15px;line-height:1.7;margin:0 0 20px">Compressores, máquinas de solda, geradores, painéis, guindastes e máquinas CNC: fornecemos tomadas e plugues industriais para integrar ao seu equipamento, com a confiabilidade de quem fabrica no Brasil há 40 anos.</p>
-          <ul class="hn-list">
-            <li>Produção nacional e estoque local, sem depender de importação</li>
-            <li>Modelos de embutir, de sobrepor e Unidades Combinadas</li>
-            <li>Configurações sob medida e apoio da engenharia STRAHL</li>
-            <li>Fornecimento recorrente para a sua linha de produção</li>
-          </ul>
-          <div class="hn-hero-actions" style="margin-top:0">
-            <button class="btn-primary" onclick="window.open('https://api.whatsapp.com/send/?phone=551150393999&text=Ol%C3%A1%2C%20sou%20fabricante%20de%20m%C3%A1quinas%2Fequipamentos%20e%20quero%20usar%20tomadas%20STRAHL%20no%20meu%20produto.&type=phone_number&app_absent=0','_blank')">QUERO A STRAHL NO MEU EQUIPAMENTO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button>
-            <button class="btn-secondary" onclick="abrirKitTecnico('Fornecimento OEM: tomadas e plugues')">SOLICITAR KIT TÉCNICO</button>
-          </div>
+          <div class="section-label">Tomadas e plugues industriais</div>
+          <h2 class="section-title">A escolha certa em tomadas e plugues industriais</h2>
+          <p>A STRAHL fabrica tomadas e plugues industriais há 40 anos, em São Paulo. São quatro linhas, de 16A a 630A, desenvolvidas para o que acontece no chão de fábrica: água, poeira, impacto, vibração e manobra sob carga.</p>
+          <p>Quem especifica STRAHL compra de quem projeta, fabrica e testa o produto no Brasil. Por isso a reposição chega rápido, a garantia é atendida pelo próprio fabricante e a engenharia acompanha o projeto do começo ao fim.</p>
         </div>
+        <ul class="hn-tom-motivos">
+          <li><strong>Contato que não aquece.</strong> Buchas com anel de compressão mantêm o pino firme e reduzem a resistência de contato.</li>
+          <li><strong>Feita para ambiente severo.</strong> Vedação até IP67, parafusos em aço inox e carcaças em Nylon 6.6, polímero de alta performance ou alumínio.</li>
+          <li><strong>Segurança na manobra.</strong> Bloqueio mecânico e proteção elétrica integrada no Mining Block, conforme as medidas da NR10.</li>
+          <li><strong>Fabricação nacional.</strong> Planta em São Paulo, processos certificados NBR ISO 9001 e laboratório de ensaios.</li>
+          <li><strong>Estoque e garantia.</strong> Pronta entrega no Brasil, sem esperar importação, e garantia do fabricante.</li>
+          <li><strong>Perto de você.</strong> Representantes em todo o país, loja online e suporte técnico para especificar.</li>
+        </ul>
       </div>
+      <div class="hn-tom-grid">
+        <a class="hn-tom-card" href="linhas/tomadas-e-plugues-industriais">
+          <span class="hn-tom-img"><img src="assets/images/cekton/5276zCK/imagem_5276zCK-principal.jpg" alt="Série profissional Cekton®" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Série profissional</span><strong>Cekton®</strong><span class="hn-tom-dest">Contatos de latão niquelado com anel de compressão, que evitam o aquecimento.</span><span class="hn-tom-spec">16A a 200A · IP44 e IP67</span></span>
+        </a>
+        <a class="hn-tom-card" href="linhas/storm-block">
+          <span class="hn-tom-img"><img src="assets/images/Storm%20Block/4575W.jpg" alt="Linha IP67 Storm Block®" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Linha IP67</span><strong>Storm Block®</strong><span class="hn-tom-dest">IP67 em toda a linha, com parafusos inox e prensa-cabo tipo pinça.</span><span class="hn-tom-spec">16A a 200A · negativos e containers</span></span>
+        </a>
+        <a class="hn-tom-card" href="linhas/tomadas-e-plugues-mining-block">
+          <span class="hn-tom-img"><img src="assets/images/mining/bm_tomada_sobrepor.jpg" alt="Mining Block® Bloqueio Mecânico" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Mining Block®</span><strong>Bloqueio Mecânico</strong><span class="hn-tom-dest">Não conecta nem desconecta sob carga: evita o arco na manobra.</span><span class="hn-tom-spec">16A a 63A · IP67 · IK09</span></span>
+        </a>
+        <a class="hn-tom-card" href="linhas/tomadas-e-plugues-mining-block/ultrarresistente">
+          <span class="hn-tom-img"><img src="assets/images/ultrarresistente/PE4506zUR.jpg" alt="Mining Block® Ultrarresistente" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Mining Block®</span><strong>Ultrarresistente</strong><span class="hn-tom-dest">Polímero de alta performance contra impacto, química, óleo e UV.</span><span class="hn-tom-spec">16A a 63A · IP67 · IK10</span></span>
+        </a>
+        <a class="hn-tom-card" href="linhas/tomadas-e-plugues-mining-block/carcaca-de-aluminio">
+          <span class="hn-tom-img"><img src="assets/images/Mining%20Block%20-%20Carcaca%20Aluminio/BMz4806.jpg" alt="Mining Block® Carcaça de Alumínio" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Mining Block®</span><strong>Carcaça de Alumínio</strong><span class="hn-tom-dest">Alumínio fundido e contatos de cobre com anel de compressão.</span><span class="hn-tom-spec">125A a 300A · IP67</span></span>
+        </a>
+        <a class="hn-tom-card" href="linhas/tomadas-e-plugues-mining-block/alta-corrente">
+          <span class="hn-tom-img"><img src="assets/images/mining/alta_corrente_frente.jpg" alt="Mining Block® Alta Corrente" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Mining Block®</span><strong>Alta Corrente</strong><span class="hn-tom-dest">Carcaça que suporta cerca de 2 t de compressão, até 1000V.</span><span class="hn-tom-spec">400A e 630A · até 1000V</span></span>
+        </a>
+        <a class="hn-tom-card" href="linhas/schuko">
+          <span class="hn-tom-img"><img src="assets/images/Schuko/Banner-inicial-PlugueeAcoplamentoPretos.jpg" alt="Padrão alemão Schuko" loading="lazy"></span>
+          <span class="hn-tom-body"><span class="hn-tom-tag">Padrão alemão</span><strong>Schuko</strong><span class="hn-tom-dest">Padrão alemão DIN 49440/41, com terra lateral duplo.</span><span class="hn-tom-spec">2P+T · IP44 · Nylon 6.6</span></span>
+        </a>
+        <a class="hn-tom-card hn-tom-oem" href="https://api.whatsapp.com/send/?phone=551150393999&text=Ol%C3%A1%2C%20sou%20fabricante%20de%20m%C3%A1quinas%2Fequipamentos%20e%20quero%20usar%20tomadas%20STRAHL%20no%20meu%20produto.&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+          <span class="hn-tom-body">
+            <span class="hn-tom-tag">Fabricantes de máquinas (OEM)</span>
+            <strong>A tomada STRAHL dentro do seu produto</strong>
+            <span class="hn-tom-spec">Compressores, máquinas de solda, geradores, painéis, guindastes e máquinas CNC.</span>
+            <span class="hn-tom-go">Fale com a engenharia <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></span>
+          </span>
+        </a>
+      </div>
+      <div class="hn-hero-actions" style="justify-content:center;margin-top:32px">
+        <div class="kit-grupo"><button class="btn-primary" onclick="abrirKitTecnico('Home: tomadas e plugues industriais')">SOLICITAR KIT TÉCNICO <img src="assets/images/icons/arrow_forward.svg" class="icon icon-white" style="width:18px;height:18px"></button><p class="kit-nota">Precisa de DWG, datasheet ou de um dado técnico que ainda não está no site? Nossa equipe técnica envia para você.</p></div>
+        <button class="btn-secondary" onclick="window.open('https://loja.strahl.com/','_blank')">COMPRAR ONLINE</button>
+      </div>
+      
     </div>
   </section>
 
@@ -469,41 +511,6 @@
           </div>
           <div class="line-block-img">
             <img src="assets/images/home/CMAs.jpg" alt="Caixas para instalações elétricas em policarbonato STRAHL">
-          </div>
-        </div>
-      </div>
-
-      <!-- Tomadas e plugues industriais -->
-      <div class="line-block">
-        <h3 class="line-block-title">Tomadas e plugues industriais</h3>
-        <p class="line-block-text" style="max-width:820px">A Strahl reestruturou sua linha de tomadas e plugues industriais com investimento em nova planta e equipamentos, elevando o padrão de qualidade e robustez frente à concorrência nacional. A linha é composta por três famílias:</p>
-        <div class="cat-grid" style="margin-top:32px">
-          <div class="cat-card" onclick="goTo('cekton')">
-            <div class="cat-card-img">
-              <img src="assets/images/banners/banner_cekton.jpg" alt="Linha Cekton">
-            </div>
-            <div class="cat-label">Contato Superior</div>
-            <h3>Cekton®</h3>
-            <p>Pinos e buchas de latão niquelado com anéis de compressão, que garantem contato elétrico superior e previnem superaquecimento.</p>
-            <div class="explore">EXPLORAR <img src="assets/images/icons/east.svg" class="icon icon-navy" style="width:16px;height:16px"></div>
-          </div>
-          <div class="cat-card" onclick="goTo('storm-block')">
-            <div class="cat-card-img">
-              <img src="assets/images/Storm%20Block/banner-produto.jpg" alt="Linha Storm Block">
-            </div>
-            <div class="cat-label">IP67</div>
-            <h3>STORM Block®</h3>
-            <p>Resistência à água IP67, pinos e buchas de latão niquelado, parafusos em aço inox e prensa-cabos tipo pinça em plugues e acoplamentos.</p>
-            <div class="explore">EXPLORAR <img src="assets/images/icons/east.svg" class="icon icon-navy" style="width:16px;height:16px"></div>
-          </div>
-          <div class="cat-card" onclick="goTo('mining-termoplastica')">
-            <div class="cat-card-img">
-              <img src="assets/images/mining/bm_tomada_sobrepor.jpg" alt="Linha Mining Block">
-            </div>
-            <div class="cat-label">Até 250A</div>
-            <h3>Mining Block®</h3>
-            <p>Tomadas, plugues industriais e tomadas de bloqueio mecânico com proteção elétrica até 250A, indicadas para mineração, sucroalcooleiro, petróleo, siderurgia, petroquímica e áreas portuárias.</p>
-            <div class="explore">EXPLORAR <img src="assets/images/icons/east.svg" class="icon icon-navy" style="width:16px;height:16px"></div>
           </div>
         </div>
       </div>
@@ -841,7 +848,7 @@
       <button type="button" class="kit-close" onclick="fecharKitTecnico()" aria-label="Fechar">×</button>
       <div class="kit-eyebrow">Para projetos e especificação</div>
       <h3 id="kit-titulo">Solicitar <span>Kit Técnico</span></h3>
-      <p>Preencha seus dados e nossa equipe envia o material técnico do produto para o seu projeto.</p>
+      <p>O site traz códigos, especificações e diferenciais de cada linha. Para o seu projeto, nossa equipe técnica envia o material complementar, inclusive arquivos que ainda não estão publicados. Preencha seus dados.</p>
       <div class="kit-items"><span>Datasheet</span><span>Desenhos técnicos</span><span>Arquivos DWG</span><span>Catálogo técnico</span><span>Suporte da engenharia</span></div>
     </div>
     <form class="kit-form" onsubmit="enviarKitTecnico(event)">

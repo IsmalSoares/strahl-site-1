@@ -159,6 +159,17 @@ Cada produto tem sua própria pasta `assets/images/cekton/CODIGOzCK/` com:
 **Nota:** 3076/CK e 4079/CK ainda usam o padrão antigo (`produto_CODIGOCK_*.jpg`).
 Migrar quando houver atualização das imagens desses produtos.
 
+## Bitola do cabo por corrente nominal (usar em todo datasheet e página)
+| Corrente nominal | Bitola do cabo |
+|---|---|
+| 16A | 2,5 a 4 mm² |
+| 32A | 4 a 6 mm² |
+| 63A | 10 a 16 mm² |
+| 125A | 35 a 50 mm² |
+| 200A | 70 a 95 mm² |
+| 250A | 95 mm² |
+| 300A | 120 mm² |
+
 ## Tabela de variant_id (Loja STRAHL)
 | Produto | variant_id |
 |---|---|

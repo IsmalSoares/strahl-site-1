@@ -44,7 +44,7 @@ SEO = {
     'home': ('STRAHL | Tomadas Industriais e Caixas de Medição de Energia e Água',
              'Fabricante brasileiro desde 1986 de tomadas e plugues industriais, caixas e centros de medição homologados, caixas para hidrômetro e quadros de distribuição.'),
     'sobre': ('Sobre a STRAHL | Materiais Elétricos desde 1986',
-              'Conheça a STRAHL: indústria brasileira de materiais elétricos desde 1986, com planta própria de 20.000 m² em São Paulo, qualidade NBR ISO 9001 e produtos homologados.'),
+              'Conheça a STRAHL: indústria brasileira de materiais elétricos desde 1986, com planta de 20.000 m² em São Paulo, qualidade NBR ISO 9001 e produtos homologados.'),
     'contato': ('Contato | STRAHL', 'Fale com a STRAHL: WhatsApp de vendas 11 5039-3999, telefones 11 2818-3838 e 11 5026-2000, e-mail vendas@strahl.com. Av. Cel. Sezefredo Fagundes, 4600, São Paulo.'),
     'representantes': ('Representantes em todo o Brasil | STRAHL', 'A STRAHL tem representantes comerciais em todo o Brasil. Fale com a nossa equipe e encontre o representante que atende a sua região.'),
     'cursos': ('Cursos e Treinamentos | STRAHL', 'Cursos e treinamentos STRAHL sobre caixas em policarbonato, padrões de entrada e tomadas industriais. Envie a sua sugestão de tema.'),
