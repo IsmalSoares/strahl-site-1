@@ -9,7 +9,7 @@ Uso (na pasta do site):
 As URLs mantêm as já indexadas do site anterior (www.strahl.com/linhas/...). A tabela fica em ROTAS,
 igual à de assets/js/main.js.
 """
-import html, os, re, shutil, sys
+import hashlib, html, json, os, re, shutil, sys
 
 MODO = sys.argv[1] if len(sys.argv) > 1 else 'local'
 assert MODO in ('teste', 'local', 'producao'), 'modo: teste | local | producao'
@@ -113,7 +113,7 @@ def ajusta_cabeca(pid, titulo, desc):
     h = h.replace('<meta charset="utf-8">\n', f'<meta charset="utf-8">\n<base href="{BASE}">\n', 1)
     h = h.replace('<meta property="og:type" content="website">',
                   f'<meta property="og:type" content="website">\n<meta property="og:url" content="{canon}">\n<link rel="canonical" href="{canon}">', 1)
-    h = h.replace('<html lang="pt-BR">', f'<html lang="pt-BR" data-ext="{EXT}">', 1)
+    h = h.replace('<html lang="pt-BR">', f'<html lang="pt-BR" data-ext="{EXT}" data-busca="{BUSCA_V}">', 1)
     return h
 
 
@@ -128,6 +128,28 @@ def links_reais(h):
         return tag.replace('href="javascript:void(0)"', f'href="{url(g.group(1))}"')
     return re.sub(r'<a\b[^>]*>', troca, h)
 
+
+# Índice da pesquisa do site (lupa na barra "Encontre por"): nome, tipo e texto de cada página.
+TIPO = {'linhas': 'Linha', 'produtos': 'Produto', 'segmentos': 'Segmento'}
+
+
+def texto_busca(bloco):
+    b = re.sub(r'<(script|style)\b.*?</\1>|<!--.*?-->', ' ', bloco, flags=re.S)
+    b = re.sub(r'<div class="breadcrumb">.*?</div>\s*</div>', ' ', b, flags=re.S)
+    return texto(b)
+
+
+indice = []
+for pid in ROTAS:
+    if pid == 'home':
+        continue
+    h1 = re.search(r'<h1[^>]*>(.*?)</h1>', blocos[pid], re.S)
+    nome = SEO[pid][0].split(' | ')[0] if pid in SEO else (texto(h1.group(1)) if h1 else pid)
+    indice.append({'p': pid, 'u': url(pid), 'n': nome, 'k': TIPO.get(ROTAS[pid].split('/')[0], 'STRAHL'),
+                   'x': texto_busca(blocos[pid])})
+js_indice = 'window.BUSCA_INDICE=' + json.dumps(indice, ensure_ascii=False, separators=(',', ':')) + ';\n'
+open(os.path.join(ROOT, 'assets/js/busca-indice.js'), 'w', encoding='utf-8').write(js_indice)
+BUSCA_V = hashlib.md5(js_indice.encode()).hexdigest()[:8]
 
 gerados = []
 for pid in ROTAS:
@@ -169,4 +191,4 @@ open(os.path.join(ROOT, 'sitemap.xml'), 'w', encoding='utf-8').write(
 robots = ('User-agent: *\nAllow: /\n\nSitemap: https://www.strahl.com/sitemap.xml\n' if MODO == 'producao'
           else 'User-agent: *\nDisallow: /\n')
 open(os.path.join(ROOT, 'robots.txt'), 'w', encoding='utf-8').write(robots)
-print(f'{MODO}: {len(gerados)} páginas, {len(REDIRECIONA)} redirecionamento, sitemap com {len(gerados)} URLs')
+print(f'{MODO}: {len(gerados)} páginas, índice de busca {len(js_indice)//1024} KB, {len(REDIRECIONA)} redirecionamento, sitemap com {len(gerados)} URLs')

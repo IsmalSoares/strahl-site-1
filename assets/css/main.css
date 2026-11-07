@@ -2410,3 +2410,41 @@
     .dims-card table { width: 100%; }
     .dims-card table th, .dims-card table td { padding: 6px 3px !important; font-size: 11px !important; }
   }
+
+  /* ═══════════════════════════════
+     PESQUISA DO SITE (barra "Encontre por" e menu do celular)
+  ═══════════════════════════════ */
+  .seg-bar { position: relative; }
+  .busca { display: flex; align-items: center; gap: 6px; margin-left: 16px; padding: 0 10px; height: 34px; background: var(--white); border: 1px solid var(--gray-border); border-radius: 4px; flex: 0 1 270px; min-width: 140px; transition: border-color .15s; }
+  .busca:focus-within { border-color: var(--navy); }
+  .busca img { width: 20px; height: 20px; flex-shrink: 0; }
+  .busca input { border: 0; outline: 0; background: transparent; font-family: 'Barlow', sans-serif; font-size: 14px; color: var(--navy); width: 100%; min-width: 0; padding: 0; }
+  .busca input::placeholder { color: var(--text-muted); }
+  .busca input::-webkit-search-cancel-button { cursor: pointer; }
+  .busca-res { position: absolute; top: 100%; right: max(16px, calc((100% - 1280px) / 2 + 32px)); width: min(620px, calc(100% - 32px)); max-height: 70vh; overflow-y: auto; background: var(--white); border-top: 3px solid var(--red); box-shadow: 0 12px 32px rgba(26,39,68,.18); z-index: 400; text-align: left; }
+  .busca-res[hidden] { display: none; }
+  .busca-item { display: flex; flex-direction: column; gap: 3px; padding: 14px 20px; border-bottom: 1px solid var(--gray-border); text-decoration: none; color: var(--navy); outline: 0; }
+  .busca-item:last-child { border-bottom: 0; }
+  .busca-item:hover, .busca-item:focus { background: var(--gray-bg); }
+  .busca-tipo { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--red); }
+  .busca-nome { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 18px; text-transform: uppercase; line-height: 1.15; }
+  .busca-trecho { font-size: 13px; line-height: 1.5; color: var(--text-muted); }
+  .busca-res mark { background: rgba(192,57,43,.14); color: inherit; padding: 0 1px; border-radius: 2px; }
+  .busca-vazio { padding: 18px 20px; font-size: 14px; color: var(--text-muted); }
+  .busca-vazio a { color: var(--red); font-weight: 700; }
+  /* menu do celular: campo largo no topo e resultados logo abaixo */
+  .busca-mobile { padding: 12px 20px 8px; }
+  .busca-mobile .busca { margin-left: 0; height: 42px; }
+  .busca-mobile .busca input { width: 100%; font-size: 16px; }
+  .busca-mobile .busca-res { position: static; width: auto; max-height: none; margin-top: 8px; box-shadow: none; border: 1px solid var(--gray-border); border-top: 3px solid var(--red); }
+  @media (max-width: 1280px) {
+    .seg-inner { padding: 0 20px; }
+    .seg-item { padding: 9px 8px; gap: 6px; font-size: 14px; }
+    .busca { margin-left: 8px; }
+  }
+
+  /* Logo do canal STRAHL Conecta (YouTube) no menu */
+  .nav-conecta { display: inline-flex; align-items: center; flex-shrink: 0; transition: opacity .15s; }
+  .nav-conecta:hover { opacity: .85; }
+  .nav-conecta img { height: 40px; width: auto; display: block; }
+  .mobile-nav-footer .nav-conecta img { height: 48px; }

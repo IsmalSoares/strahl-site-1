@@ -402,3 +402,145 @@ function dsSetImgCustom(imgId, thumb, src) {
     });
   }
   document.addEventListener('DOMContentLoaded', ajustesCelular);
+
+  /* ═══════════════════════════════
+     PESQUISA DO SITE (lupa na barra "Encontre por" e no menu do celular)
+     O índice (assets/js/busca-indice.js) é gerado pelo tools/build_urls.py
+     e só é baixado quando a pessoa clica no campo.
+  ═══════════════════════════════ */
+  var BUSCA_NORM = null;
+
+  function semAcento(t) {
+    return t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  }
+
+  function escHtml(t) {
+    return t.replace(/[&<>"]/g, function(c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; });
+  }
+
+  function buscaCarregar(depois) {
+    if (window.BUSCA_INDICE) { if (depois) depois(); return; }
+    var existente = document.getElementById('busca-indice-js');
+    if (existente) { if (depois) existente.addEventListener('load', depois); return; }
+    var s = document.createElement('script');
+    s.id = 'busca-indice-js';
+    s.src = 'assets/js/busca-indice.js' + (document.documentElement.dataset.busca ? '?v=' + document.documentElement.dataset.busca : '');
+    if (depois) s.addEventListener('load', depois);
+    document.head.appendChild(s);
+  }
+
+  // Marca as palavras pesquisadas num trecho de texto original
+  function buscaMarca(orig, palavras) {
+    var norm = semAcento(orig), marcas = [];
+    palavras.forEach(function(w) {
+      var i = norm.indexOf(w);
+      while (i >= 0) { marcas.push([i, i + w.length]); i = norm.indexOf(w, i + w.length); }
+    });
+    marcas.sort(function(a, b) { return a[0] - b[0]; });
+    var out = '', pos = 0;
+    marcas.forEach(function(m) {
+      if (m[0] < pos) return;
+      out += escHtml(orig.slice(pos, m[0])) + '<mark>' + escHtml(orig.slice(m[0], m[1])) + '</mark>';
+      pos = m[1];
+    });
+    return out + escHtml(orig.slice(pos));
+  }
+
+  function buscaResultados(q) {
+    var palavras = semAcento(q).split(/\s+/).filter(function(w) { return w.length > 1 || /\d/.test(w); });
+    if (!palavras.length) return { palavras: palavras, itens: [] };
+    if (!BUSCA_NORM) BUSCA_NORM = window.BUSCA_INDICE.map(function(e) { return { n: semAcento(e.n), x: semAcento(e.x) }; });
+    var itens = [];
+    window.BUSCA_INDICE.forEach(function(e, k) {
+      var nn = BUSCA_NORM[k].n, nx = BUSCA_NORM[k].x, pontos = 0;
+      for (var j = 0; j < palavras.length; j++) {
+        var w = palavras[j], noNome = nn.indexOf(w) >= 0, vezes = nx.split(w).length - 1;
+        if (!noNome && !vezes) return;
+        pontos += (noNome ? 20 : 0) + Math.min(vezes, 10);
+      }
+      // trecho do texto em volta da primeira ocorrência da palavra mais rara
+      var w0 = palavras.slice().sort(function(a, b) { return (nx.split(a).length) - (nx.split(b).length); })[0];
+      var i = nx.indexOf(w0), ini = Math.max(0, i - 60), trecho = '';
+      if (i >= 0) {
+        ini = e.x.lastIndexOf(' ', ini) + 1;
+        trecho = (ini > 0 ? '…' : '') + e.x.substr(ini, 170).replace(/\s\S*$/, '') + '…';
+      }
+      // palavra inteira encontrada, para o navegador destacar na página (#:~:text=)
+      var alvo = i >= 0 ? e.x.slice(i).match(/^\S*/)[0] : '';
+      var antes = i > 0 ? e.x.slice(0, i).match(/\S*$/)[0] : '';
+      itens.push({ e: e, pontos: pontos, trecho: trecho, alvo: (antes + alvo).replace(/[.,;:)(]+$/, '') });
+    });
+    itens.sort(function(a, b) { return b.pontos - a.pontos; });
+    return { palavras: palavras, itens: itens.slice(0, 8) };
+  }
+
+  function buscar(input) {
+    var res = document.getElementById(input.dataset.res), q = input.value.trim();
+    if (!res) return;
+    if (!q) { res.hidden = true; res.innerHTML = ''; return; }
+    if (!window.BUSCA_INDICE) { buscaCarregar(function() { buscar(input); }); return; }
+    var r = buscaResultados(q);
+    if (!r.itens.length) {
+      res.innerHTML = '<div class="busca-vazio">Nada encontrado para <strong>' + escHtml(q) + '</strong>. ' +
+        '<a href="' + (document.getElementById('page-contato') ? 'javascript:void(0)" onclick="goTo(\'contato\')' : 'contato' + (document.documentElement.dataset.ext || '')) +
+        '">Fale com a STRAHL</a> e ajudamos a encontrar o produto.</div>';
+    } else {
+      res.innerHTML = r.itens.map(function(it) {
+        var href = it.e.u + (it.alvo ? '#:~:text=' + encodeURIComponent(it.alvo) : '');
+        return '<a class="busca-item" href="' + escHtml(href) + '" data-page="' + it.e.p + '" onclick="return buscaAbrir(event, this)">' +
+          '<span class="busca-tipo">' + escHtml(it.e.k) + '</span>' +
+          '<span class="busca-nome">' + buscaMarca(it.e.n, r.palavras) + '</span>' +
+          (it.trecho ? '<span class="busca-trecho">' + buscaMarca(it.trecho, r.palavras) + '</span>' : '') + '</a>';
+      }).join('');
+    }
+    res.hidden = false;
+  }
+
+  // No arquivo-fonte (todas as páginas juntas) troca de página sem recarregar
+  function buscaAbrir(e, a) {
+    if (document.getElementById('page-' + a.dataset.page) && !document.documentElement.dataset.busca) {
+      e.preventDefault();
+      buscaFechar();
+      goTo(a.dataset.page);
+      return false;
+    }
+    return true;
+  }
+
+  function buscaFechar() {
+    document.querySelectorAll('.busca-res').forEach(function(r) { r.hidden = true; });
+  }
+
+  function buscaEnviar(e) {
+    e.preventDefault();
+    var input = e.target.querySelector('input');
+    var res = document.getElementById(input.dataset.res);
+    var primeiro = res && res.querySelector('.busca-item');
+    if (primeiro) primeiro.click();
+    return false;
+  }
+
+  function buscaTecla(e) {
+    var res = document.getElementById(e.target.dataset.res);
+    if (e.key === 'Escape') { e.target.value = ''; buscaFechar(); e.target.blur(); }
+    if (e.key === 'ArrowDown' && res && !res.hidden) {
+      var p = res.querySelector('.busca-item');
+      if (p) { e.preventDefault(); p.focus(); }
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var item = document.activeElement;
+    if (!item || !item.classList.contains('busca-item')) return;
+    if (e.key === 'ArrowDown' && item.nextElementSibling) { e.preventDefault(); item.nextElementSibling.focus(); }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (item.previousElementSibling) item.previousElementSibling.focus();
+      else { var inp = document.querySelector('.busca input[data-res="' + item.parentNode.id + '"]'); if (inp) inp.focus(); }
+    }
+    if (e.key === 'Escape') buscaFechar();
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.busca') && !e.target.closest('.busca-res')) buscaFechar();
+  });

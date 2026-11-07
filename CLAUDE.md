@@ -52,6 +52,8 @@ strahl-site/
 - As URLs mantêm as já indexadas do strahl.com (`/linhas/...`). A tabela `ROTAS` fica em `tools/build_urls.py`
   e em `assets/js/main.js` (as duas precisam ser iguais).
 - Não editar os HTML gerados: rodar o build de novo depois de mudar `index-fonte.html`.
+- Pesquisa do site (lupa na barra "Encontre por" e no topo do menu do celular): o build gera `assets/js/busca-indice.js`
+  com o texto de cada página. O arquivo só é baixado quando a pessoa clica no campo. Código em `main.js` (funções `busca*`).
 
 ## Navegação
 Feita por JS puro via `goTo('nome-da-pagina')`.

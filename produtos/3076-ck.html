@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-ext="">
+<html lang="pt-BR" data-ext="" data-busca="fb0c5c40">
 <head>
 <meta charset="utf-8">
 <base href="/strahl-site-1/">
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css?v=20261105f">
+<link rel="stylesheet" href="assets/css/main.css?v=20261107b">
 <!-- Schema.org: dados estruturados para buscas e AI Overviews -->
 <script type="application/ld+json">
 {
@@ -95,6 +95,9 @@
       <span class="nav-link" id="nav-contato" onclick="goTo('contato')">Contato</span>
     </nav>
     <div class="nav-right">
+      <a class="nav-conecta" href="https://www.youtube.com/channel/UCHYPxPhgI7sziLgHKyfzRAw" target="_blank" rel="noopener" title="Canal STRAHL Conecta no YouTube">
+        <img src="assets/images/conecta-youtube.png" alt="Assista nossos vídeos no YouTube: STRAHL Conecta">
+      </a>
       <a class="nav-phone" href="tel:+551128183838">
         <img src="assets/images/icons/call.svg" class="icon icon-navy" style="width:24px;height:24px">
         11 2818-3838
@@ -103,7 +106,9 @@
       <a class="nav-phone" href="https://api.whatsapp.com/send/?phone=551150393999&text&type=phone_number&app_absent=0" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp">
         <img src="assets/images/icons/whatsapp.svg" class="icon icon-navy" style="width:24px;height:24px">
       </a>
-      <img src="assets/images/icons/shopping_cart.svg" class="icon icon-navy" style="width:22px;height:22px;cursor:pointer">
+      <a class="nav-phone" href="https://loja.strahl.com/" target="_blank" rel="noopener" title="Loja STRAHL" aria-label="Loja STRAHL">
+        <img src="assets/images/icons/shopping_cart.svg" class="icon icon-navy" style="width:22px;height:22px">
+      </a>
     </div>
     <button class="nav-hamburger" id="nav-toggle" onclick="toggleMobileNav()" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-nav">
       <span></span><span></span><span></span>
@@ -118,13 +123,25 @@
       <a class="seg-item" data-page="distribuidores" href="segmentos/distribuidores"><img src="assets/images/icons/layers.svg" class="icon icon-red" alt="">Distribuidores</a>
       <a class="seg-item" data-page="revendedores" href="segmentos/revendedores"><img src="assets/images/icons/storefront.svg" class="icon icon-red" alt="">Revendedores</a>
       <a class="seg-item" data-page="predial-residencial" href="linhas/predial-e-residencial"><img src="assets/images/icons/home.svg" class="icon icon-red" alt="">Predial e Residencial</a>
+      <form class="busca" role="search" onsubmit="return buscaEnviar(event)">
+        <img src="assets/images/icons/search.svg" class="icon icon-navy" alt="">
+        <input type="search" placeholder="Pesquisar produto, linha ou código" aria-label="Pesquisar no site" autocomplete="off" data-res="busca-res" onfocus="buscaCarregar()" oninput="buscar(this)" onkeydown="buscaTecla(event)">
+      </form>
     </div>
+    <div class="busca-res" id="busca-res" hidden></div>
   </div>
 </header>
 
 <!-- ── MENU MOBILE ── -->
 <div class="mobile-nav" id="mobile-nav" style="display:none">
   <div class="mobile-nav-links">
+    <div class="busca-mobile">
+      <form class="busca" role="search" onsubmit="return buscaEnviar(event)">
+        <img src="assets/images/icons/search.svg" class="icon icon-navy" alt="">
+        <input type="search" placeholder="Pesquisar produto, linha ou código" aria-label="Pesquisar no site" autocomplete="off" data-res="busca-res-m" onfocus="buscaCarregar()" oninput="buscar(this)" onkeydown="buscaTecla(event)">
+      </form>
+      <div class="busca-res" id="busca-res-m" hidden></div>
+    </div>
 
     <!-- ── GRUPO: PRODUTOS ── -->
     <div class="mobile-nav-group" id="mnav-produtos">
@@ -225,6 +242,9 @@
 
   </div>
   <div class="mobile-nav-footer">
+    <a class="nav-conecta" href="https://www.youtube.com/channel/UCHYPxPhgI7sziLgHKyfzRAw" target="_blank" rel="noopener" title="Canal STRAHL Conecta no YouTube">
+      <img src="assets/images/conecta-youtube.png" alt="Assista nossos vídeos no YouTube: STRAHL Conecta">
+    </a>
     <a class="nav-phone" href="tel:+551128183838">
       <img src="assets/images/icons/call.svg" class="icon icon-navy" style="width:24px;height:24px">
       11 2818-3838
@@ -236,6 +256,10 @@
     <a class="nav-phone" href="https://api.whatsapp.com/send/?phone=551150393999&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">
       <img src="assets/images/icons/whatsapp.svg" class="icon icon-navy" style="width:24px;height:24px">
       WhatsApp
+    </a>
+    <a class="nav-phone" href="https://loja.strahl.com/" target="_blank" rel="noopener">
+      <img src="assets/images/icons/shopping_cart.svg" class="icon icon-navy" style="width:24px;height:24px">
+      Loja online
     </a>
   </div>
 </div>
@@ -758,6 +782,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=20261105b" defer></script>
+<script src="assets/js/main.js?v=20261107a" defer></script>
 </body>
 </html>
